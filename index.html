@@ -68,7 +68,7 @@
             transform: translateY(-2px);
         }
         
-        /* নতুন ২টি ছবি সুন্দরভাবে সাজানোর জন্য CSS */
+        /* ভিডিও গ্যালারি সুন্দরভাবে সাজানোর জন্য CSS */
         .image-gallery {
             display: flex;
             justify-content: center;
@@ -76,14 +76,22 @@
             margin-top: 20px;
             flex-wrap: wrap;
         }
-        .gallery-img {
+        .gallery-video {
             width: 45%;
             max-width: 250px;
-            height: 200px;
-            object-fit: cover;
+            height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             border: 3px solid white;
+            background: #000;
+        }
+
+        /* মোবাইল স্ক্রিনের জন্য ভিডিওর সাইজ ঠিক করার জন্য */
+        @media (max-width: 600px) {
+            .gallery-video {
+                width: 100%;
+                max-width: 100%;
+            }
         }
 
         footer {
@@ -108,13 +116,23 @@
 
     <div class="container">
         
-        <!-- নতুন ২টি ছবি এখানে যোগ করা হয়েছে -->
+        <!-- ভিডিও গ্যালারি সেকশন -->
         <div class="card">
-            <h2>আমার গ্যালারি</h2>
+            <h2>আমার ভিডিও গ্যালারি</h2>
             <div class="image-gallery">
-                <!-- ''Facebook_1783604846656(360p).mp4 এবং 'Facebook_1783352252816(360p).mp4' এর জায়গায় আপনার আপলোড করা ছবির নাম বসাবেন -->
-                <img src="Facebook_1783604846656(360p).mp4" alt="Photo 1" class="gallery-img">
-                <img src="Facebook_1783352252816(360p).mp4" alt="Photo 2" class="gallery-img">
+                
+                <!-- প্রথম ভিডিও -->
+                <video class="gallery-video" controls>
+                    <source src="Facebook_1783604846656(360p).mp4" type="video/mp4">
+                    আপনার ব্রাউজারটি ভিডিও সাপোর্ট করছে না।
+                </video>
+
+                <!-- দ্বিতীয় ভিডিও -->
+                <video class="gallery-video" controls>
+                    <source src="Facebook_1783352252816(360p).mp4" type="video/mp4">
+                    আপনার ব্রাউজারটি ভিডিও সাপোর্ট করছে না।
+                </video>
+
             </div>
         </div>
 
