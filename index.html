@@ -1,1399 +1,1099 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Waziha Rahman | Official Website</title>
-
-<meta name="description" content="Waziha Rahman Official Website — latest updates, videos, gallery and more.">
-<meta name="keywords" content="Waziha Rahman, Waziha Rahman Official Website">
-<meta name="robots" content="index, follow">
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
-
-:root{
-    --bg:#050816;
-    --bg2:#0a1024;
-    --card:rgba(255,255,255,.055);
-    --card2:rgba(255,255,255,.08);
-    --text:#f8fafc;
-    --muted:#9aa6bd;
-    --primary:#8b5cf6;
-    --secondary:#22d3ee;
-    --pink:#ec4899;
-    --border:rgba(255,255,255,.10);
-    --shadow:0 25px 80px rgba(0,0,0,.35);
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:'Inter',sans-serif;
-    color:var(--text);
-    background:
-        radial-gradient(circle at 10% 10%,rgba(139,92,246,.20),transparent 30%),
-        radial-gradient(circle at 90% 20%,rgba(34,211,238,.13),transparent 28%),
-        radial-gradient(circle at 50% 90%,rgba(236,72,153,.10),transparent 30%),
-        var(--bg);
-    overflow-x:hidden;
-}
-
-body::before{
-    content:"";
-    position:fixed;
-    width:420px;
-    height:420px;
-    border-radius:50%;
-    background:rgba(139,92,246,.08);
-    filter:blur(100px);
-    left:-180px;
-    bottom:-150px;
-    pointer-events:none;
-    z-index:-1;
-}
-
-body::after{
-    content:"";
-    position:fixed;
-    width:380px;
-    height:380px;
-    border-radius:50%;
-    background:rgba(34,211,238,.07);
-    filter:blur(100px);
-    right:-160px;
-    top:35%;
-    pointer-events:none;
-    z-index:-1;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-    /* ===== NAVBAR ===== */
-
-.navbar{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
-    padding:15px 5%;
-    background:rgba(5,8,22,.70);
-    backdrop-filter:blur(20px);
-    -webkit-backdrop-filter:blur(20px);
-    border-bottom:1px solid var(--border);
-}
-
-.nav-inner{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    font-family:'Manrope',sans-serif;
-    font-weight:800;
-    font-size:19px;
-    letter-spacing:-.5px;
-}
-
-.logo span{
-    background:linear-gradient(90deg,var(--primary),var(--secondary));
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:27px;
-}
-
-.nav-links a{
-    font-size:13px;
-    font-weight:600;
-    color:#aeb8ca;
-    transition:.3s;
-}
-
-.nav-links a:hover{
-    color:white;
-}
-
-.menu{
-    display:none;
-    width:42px;
-    height:42px;
-    border:1px solid var(--border);
-    border-radius:12px;
-    background:var(--card);
-    color:white;
-    font-size:20px;
-    cursor:pointer;
-}
-
-/* ===== HERO ===== */
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    padding:150px 20px 100px;
-    position:relative;
-}
-
-.hero-content{
-    max-width:900px;
-    animation:heroIn 1s cubic-bezier(.2,.8,.2,1);
-}
-
-.badge{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:8px 15px;
-    border:1px solid rgba(139,92,246,.35);
-    border-radius:50px;
-    background:rgba(139,92,246,.08);
-    color:#c4b5fd;
-    font-size:12px;
-    font-weight:700;
-    margin-bottom:25px;
-}
-
-.badge-dot{
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:#22d3ee;
-    box-shadow:0 0 12px #22d3ee;
-}
-
-.profile-wrap{
-    position:relative;
-    display:inline-block;
-    margin-bottom:25px;
-}
-
-.profile-image{
-    width:150px;
-    height:150px;
-    object-fit:cover;
-    border-radius:50%;
-    border:4px solid rgba(255,255,255,.85);
-    box-shadow:
-        0 0 0 8px rgba(139,92,246,.08),
-        0 25px 60px rgba(0,0,0,.4);
-}
-
-.verified{
-    position:absolute;
-    right:3px;
-    bottom:12px;
-    width:31px;
-    height:31px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:#2563eb;
-    border:4px solid #070a17;
-    font-size:11px;
-}
-
-.hero h1{
-    font-family:'Manrope',sans-serif;
-    font-size:clamp(42px,8vw,82px);
-    line-height:1;
-    letter-spacing:-4px;
-    font-weight:800;
-    margin-bottom:22px;
-}
-
-.gradient{
-    background:linear-gradient(90deg,#a78bfa,#22d3ee,#f472b6);
-    background-size:200%;
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    animation:gradientMove 5s ease infinite;
-}
-
-.hero-description{
-    max-width:650px;
-    margin:auto;
-    color:var(--muted);
-    font-size:17px;
-    line-height:1.8;
-}
-
-.hero-buttons{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-top:32px;
-}
-
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    padding:13px 21px;
-    border-radius:13px;
-    font-size:13px;
-    font-weight:700;
-    transition:.3s;
-}
-
-.btn-primary{
-    color:white;
-    background:linear-gradient(135deg,#7c3aed,#06b6d4);
-    box-shadow:0 15px 35px rgba(124,58,237,.25);
-}
-
-.btn-secondary{
-    background:var(--card);
-    border:1px solid var(--border);
-}
-
-.btn:hover{
-    transform:translateY(-4px);
-    }
-/* ===== SECTIONS ===== */
-
-.section{
-    max-width:1120px;
-    margin:auto;
-    padding:100px 20px;
-}
-
-.heading{
-    text-align:center;
-    max-width:680px;
-    margin:0 auto 50px;
-}
-
-.heading-label{
-    color:#a78bfa;
-    font-size:11px;
-    font-weight:800;
-    letter-spacing:3px;
-    text-transform:uppercase;
-}
-
-.heading h2{
-    font-family:'Manrope',sans-serif;
-    font-size:clamp(30px,5vw,48px);
-    letter-spacing:-2px;
-    margin:9px 0 13px;
-}
-
-.heading p{
-    color:var(--muted);
-}
-
-/* ===== ABOUT ===== */
-
-.glass{
-    background:linear-gradient(
-        145deg,
-        rgba(255,255,255,.075),
-        rgba(255,255,255,.025)
-    );
-    border:1px solid var(--border);
-    box-shadow:var(--shadow);
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-}
-
-.about{
-    padding:42px;
-    border-radius:25px;
-    text-align:center;
-}
-
-.about p{
-    max-width:760px;
-    margin:auto;
-    color:#aab5c9;
-    line-height:1.9;
-}
-
-/* ===== FEATURES ===== */
-
-.features{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-}
-
-.feature{
-    padding:30px;
-    border-radius:22px;
-    transition:.4s cubic-bezier(.2,.8,.2,1);
-}
-
-.feature:hover{
-    transform:translateY(-9px);
-    border-color:rgba(139,92,246,.35);
-}
-
-.icon{
-    width:53px;
-    height:53px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:16px;
-    font-size:22px;
-    margin-bottom:20px;
-    background:linear-gradient(
-        135deg,
-        rgba(139,92,246,.16),
-        rgba(34,211,238,.10)
-    );
-}
-
-.feature h3{
-    font-family:'Manrope',sans-serif;
-    margin-bottom:8px;
-}
-
-.feature p{
-    color:var(--muted);
-    font-size:13px;
-}
-
-/* ===== GALLERY ===== */
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:22px;
-}
-
-.video-card{
-    padding:10px;
-    border-radius:23px;
-    transition:.4s;
-}
-
-.video-card:hover{
-    transform:translateY(-6px);
-}
-
-.gallery-video{
-    width:100%;
-    display:block;
-    border-radius:17px;
-    background:#000;
-    }
-    /* ===== SURVEY ===== */
-
-.survey{
-    max-width:680px;
-    margin:auto;
-    padding:45px 30px;
-    border-radius:27px;
-    text-align:center;
-    overflow:hidden;
-    position:relative;
-}
-
-.survey-icon{
-    width:65px;
-    height:65px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin:auto auto 20px;
-    border-radius:50%;
-    font-size:27px;
-    background:linear-gradient(135deg,#7c3aed,#ec4899);
-    box-shadow:0 15px 40px rgba(124,58,237,.28);
-}
-
-.survey h2{
-    font-family:'Manrope',sans-serif;
-    font-size:30px;
-}
-
-.survey-sub{
-    color:var(--muted);
-    margin:10px 0 28px;
-}
-
-.survey-buttons{
-    display:flex;
-    gap:12px;
-}
-
-.survey-buttons button{
-    flex:1;
-    padding:15px;
-    border:0;
-    border-radius:14px;
-    font-weight:800;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.yes{
-    color:white;
-    background:linear-gradient(135deg,#7c3aed,#ec4899);
-}
-
-.no{
-    color:white;
-    background:rgba(255,255,255,.07);
-    border:1px solid var(--border)!important;
-}
-
-.survey-buttons button:hover{
-    transform:translateY(-4px);
-}
-
-#vote-message{
-    display:none;
-    margin-top:18px;
-    font-size:14px;
-    font-weight:700;
-}
-
-.results{
-    margin-top:30px;
-    text-align:left;
-}
-
-.result-line{
-    display:flex;
-    justify-content:space-between;
-    margin:12px 0 6px;
-    font-size:13px;
-}
-
-.progress{
-    height:8px;
-    overflow:hidden;
-    border-radius:20px;
-    background:rgba(255,255,255,.08);
-}
-
-.progress div{
-    width:0;
-    height:100%;
-    border-radius:20px;
-    background:linear-gradient(90deg,#8b5cf6,#22d3ee);
-    transition:1s;
-}
-
-#total-votes{
-    display:block;
-    text-align:center;
-    color:var(--muted);
-    margin-top:18px;
-    font-size:12px;
-}
-
-/* ===== FAQ ===== */
-
-.faq{
-    max-width:800px;
-    margin:auto;
-}
-
-details{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:17px;
-    padding:18px 20px;
-    margin-bottom:12px;
-    transition:.3s;
-}
-
-details:hover{
-    border-color:rgba(139,92,246,.3);
-}
-
-summary{
-    cursor:pointer;
-    font-weight:700;
-    font-size:14px;
-}
-
-details p{
-    color:var(--muted);
-    font-size:13px;
-    margin-top:12px;
-    }
-    /* ===== CONTACT ===== */
-
-.contact{
-    text-align:center;
-    padding:48px 25px;
-    border-radius:27px;
-}
-
-.contact p{
-    color:var(--muted);
-    margin-top:8px;
-}
-
-.contact-buttons{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-top:27px;
-}
-
-.facebook{
-    background:#1877f2;
-    color:white;
-}
-
-.whatsapp{
-    background:#25d366;
-    color:white;
-}
-
-/* ===== FOOTER ===== */
-
-footer{
-    text-align:center;
-    padding:50px 20px;
-    border-top:1px solid var(--border);
-    color:var(--muted);
-    font-size:12px;
-}
-
-footer strong{
-    color:white;
-}
-
-/* ===== TOP BUTTON ===== */
-
-#top{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:45px;
-    height:45px;
-    border:0;
-    border-radius:50%;
-    background:linear-gradient(135deg,#7c3aed,#06b6d4);
-    color:white;
-    font-size:18px;
-    cursor:pointer;
-    display:none;
-    z-index:999;
-    box-shadow:0 15px 35px rgba(0,0,0,.3);
-}
-
-/* ===== ANIMATIONS ===== */
-
-.reveal{
-    opacity:0;
-    transform:translateY(35px);
-    transition:opacity .8s ease,transform .8s ease;
-}
-
-.reveal.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
-@keyframes heroIn{
-    from{
-        opacity:0;
-        transform:translateY(35px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes gradientMove{
-    0%,100%{
-        background-position:0% 50%;
-    }
-
-    50%{
-        background-position:100% 50%;
-    }
-                                }
-    /* ===== MOBILE ===== */
-
-@media(max-width:800px){
-
-    .nav-links{
-        display:none;
-        position:absolute;
-        top:70px;
-        left:5%;
-        right:5%;
-        padding:10px;
-        flex-direction:column;
-        align-items:stretch;
-        gap:2px;
-        background:#0b1020;
-        border:1px solid var(--border);
-        border-radius:18px;
-        box-shadow:var(--shadow);
-    }
-
-    .nav-links.active{
-        display:flex;
-    }
-
-    .nav-links a{
-        padding:13px;
-        border-radius:10px;
-    }
-
-    .menu{
-        display:block;
-    }
-
-    .features{
-        grid-template-columns:1fr;
-    }
-
-    .gallery{
-        grid-template-columns:1fr;
-    }
-}
-
-@media(max-width:520px){
-
-    .hero{
-        padding-top:135px;
-    }
-
-    .hero h1{
-        letter-spacing:-2px;
-    }
-
-    .hero-description{
-        font-size:15px;
-    }
-
-    .section{
-        padding:75px 16px;
-    }
-
-    .about,
-    .survey{
-        padding:30px 18px;
-    }
-
-    .survey-buttons{
-        flex-direction:column;
-    }
-
-    .profile-image{
-        width:135px;
-        height:135px;
-    }
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- ================= NAVBAR ================= -->
-
-<nav class="navbar">
-
-    <div class="nav-inner">
-
-        <a href="#home" class="logo">
-            Waziha <span>Rahman</span>
-        </a>
-
-        <div class="nav-links" id="navLinks">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#features">Features</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#survey">Survey</a>
-            <a href="#faq">FAQ</a>
-            <a href="#contact">Contact</a>
-        </div>
-
-        <button class="menu" onclick="toggleMenu()">☰</button>
-
-    </div>
-
-</nav>
-<!-- ================= HERO ================= -->
-
-<header class="hero" id="home">
-
-    <div class="hero-content">
-
-        <div class="profile-wrap">
-
-            <!-- ORIGINAL IMAGE — UNCHANGED -->
-            <img
-                src="1786165456256.jpg"
-                class="profile-image"
-                alt="Waziha Rahman"
-            >
-
-            <div class="verified">✓</div>
-
-        </div>
-
-        <div class="badge">
-            <span class="badge-dot"></span>
-            OFFICIAL WEBSITE
-        </div>
-
-        <h1>
-            Waziha <span class="gradient">Rahman</span>
-        </h1>
-
-        <p class="hero-description">
-            Welcome to the official website of Waziha Rahman.
-            Explore the latest videos, updates and more — all in one place.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#gallery" class="btn btn-primary">
-                🎬 Explore Gallery
-            </a>
-
-            <!-- ORIGINAL FACEBOOK LINK — UNCHANGED -->
-            <a
-                href="https://www.facebook.com/profile.php?id=61588949437523"
-                target="_blank"
-                class="btn btn-secondary">
-                📘 Facebook
-            </a>
-
-        </div>
-
-    </div>
-
-</header>
-
-
-<!-- ================= ABOUT ================= -->
-
-<section class="section reveal" id="about">
-
-    <div class="heading">
-
-        <div class="heading-label">About</div>
-
-        <h2>Official Website</h2>
-
-        <p>
-            A modern place to discover updates, videos and online presence.
-        </p>
-
-    </div>
-
-    <div class="glass about">
-
-        <p>
-            Welcome to the official website of Waziha Rahman.
-            This website brings together videos, updates and
-            important online links in one simple and beautiful place.
-        </p>
-
-    </div>
-
-</section>
-<!-- ================= FEATURES ================= -->
-
-<section class="section reveal" id="features">
-
-    <div class="heading">
-
-        <div class="heading-label">Highlights</div>
-
-        <h2>Explore the Website</h2>
-
-        <p>
-            Everything you need, presented in a clean and modern experience.
-        </p>
-
-    </div>
-
-    <div class="features">
-
-        <div class="glass feature">
-
-            <div class="icon">🎬</div>
-
-            <h3>Latest Videos</h3>
-
-            <p>
-                Watch featured videos directly from the official website.
-            </p>
-
-        </div>
-
-
-        <div class="glass feature">
-
-            <div class="icon">🖼️</div>
-
-            <h3>Gallery</h3>
-
-            <p>
-                Explore the available visual content in a premium layout.
-            </p>
-
-        </div>
-
-
-        <div class="glass feature">
-
-            <div class="icon">💜</div>
-
-            <h3>Your Opinion</h3>
-
-            <p>
-                Share your thoughts through our simple interest survey.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= GALLERY ================= -->
-
-<section class="section reveal" id="gallery">
-
-    <div class="heading">
-
-        <div class="heading-label">Gallery</div>
-
-        <h2>Featured Videos</h2>
-
-        <p>
-            Thanks for visiting our official video gallery.
-        </p>
-
-    </div>
-
-    <div class="gallery">
-
-        <div class="glass video-card">
-
-            <!-- ORIGINAL VIDEO — UNCHANGED -->
-
-            <video
-                class="gallery-video"
-                controls
-                playsinline>
-
-                <source
-                    src="Facebook_1783604846656(360p).mp4"
-                    type="video/mp4">
-
-                Your browser does not support video playback.
-
-            </video>
-
-        </div>
-
-
-        <div class="glass video-card">
-
-            <!-- ORIGINAL VIDEO — UNCHANGED -->
-
-            <video
-                class="gallery-video"
-                controls
-                playsinline>
-
-                <source
-                    src="Facebook_1783352252816(360p).mp4"
-                    type="video/mp4">
-
-                Your browser does not support video playback.
-
-            </video>
-
-        </div>
-
-    </div>
-
-    </section>
-    <!-- ================= SURVEY ================= -->
-
-<section class="section reveal" id="survey">
-
-    <div class="heading">
-
-        <div class="heading-label">Your Opinion</div>
-
-        <h2>What Do You Think?</h2>
-
-        <p>
-            Your opinion helps us understand what visitors want.
-        </p>
-
-    </div>
-
-
-    <div class="glass survey">
-
-        <div class="survey-icon">✨</div>
-
-        <h2>
-            Are you interested in this website?
-        </h2>
-
-        <p class="survey-sub">
-            Choose the option that best describes your opinion.
-        </p>
-
-
-        <div class="survey-buttons">
-
-            <button
-                class="yes"
-                onclick="vote('yes')">
-
-                ❤️ Yes, I'm Interested
-
-            </button>
-
-
-            <button
-                class="no"
-                onclick="vote('no')">
-
-                👎 Not Yet
-
-            </button>
-
-        </div>
-
-
-        <div id="vote-message"></div>
-
-
-        <div class="results">
-
-            <div class="result-line">
-
-                <span>❤️ Interested</span>
-
-                <strong id="yes-percent">
-                    0%
-                </strong>
-
-            </div>
-
-
-            <div class="progress">
-
-                <div id="yes-bar"></div>
-
-            </div>
-
-
-            <div class="result-line">
-
-                <span>👎 Not Interested</span>
-
-                <strong id="no-percent">
-                    0%
-                </strong>
-
-            </div>
-
-
-            <div class="progress">
-
-                <div id="no-bar"></div>
-
-            </div>
-
-
-            <small id="total-votes">
-                0 votes
-            </small>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= FAQ ================= -->
-
-<section class="section reveal" id="faq">
-
-    <div class="heading">
-
-        <div class="heading-label">FAQ</div>
-
-        <h2>Frequently Asked Questions</h2>
-
-        <p>
-            Quick answers to common questions.
-        </p>
-
-    </div>
-
-
-    <div class="faq">
-
-        <details>
-
-            <summary>
-                What is this website?
-            </summary>
-
-            <p>
-                This is the official website of Waziha Rahman,
-                created to share videos, updates and online information.
-            </p>
-
-        </details>
-
-
-        <details>
-
-            <summary>
-                Where can I find the official Facebook?
-            </summary>
-
-            <p>
-                You can visit the official Facebook profile
-                using the Facebook buttons on this website.
-            </p>
-
-        </details>
-
-
-        <details>
-
-            <summary>
-                Can I share my opinion?
-            </summary>
-
-            <p>
-                Yes. Visit the Survey section and select the option
-                that matches your opinion.
-            </p>
-
-        </details>
-
-    </div>
-
-                                          </section>
-<!-- ================= CONTACT ================= -->
-
-<section class="section reveal" id="contact">
-
-    <div class="glass contact">
-
-        <div class="heading" style="margin-bottom:0;">
-
-            <div class="heading-label">Contact</div>
-
-            <h2>Let's Connect</h2>
-
-            <p>
-                Follow the official page or contact us on WhatsApp.
-            </p>
-
-        </div>
-
-
-        <div class="contact-buttons">
-
-            <!-- ORIGINAL FACEBOOK LINK — UNCHANGED -->
-
-            <a
-                href="https://www.facebook.com/profile.php?id=61588949437523"
-                target="_blank"
-                class="btn facebook">
-
-                📘 Facebook
-
-            </a>
-
-
-            <!-- WHATSAPP -->
-
-            <a
-                href="https://wa.me/8801782088426"
-                target="_blank"
-                class="btn whatsapp">
-
-                💬 WhatsApp
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <p>
-        © 2026 <strong>Waziha Rahman</strong>.
-        All rights reserved.
-    </p>
-
-    <p style="margin-top:6px;">
-        Official Website • Made with ❤️
-    </p>
-
-</footer>
-
-
-<!-- BACK TO TOP -->
-
-<button id="top" onclick="goTop()">↑</button>
-
-
-<!-- ================= JAVASCRIPT ================= -->
-
-<script>
-
-/* MOBILE MENU */
-
-function toggleMenu(){
-
-    document
-        .getElementById("navLinks")
-        .classList.toggle("active");
-
-}
-
-
-/* CLOSE MENU AFTER CLICK */
-
-document
-    .querySelectorAll(".nav-links a")
-    .forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            document
-                .getElementById("navLinks")
-                .classList.remove("active");
-
-        });
-
-    });
-
-
-/* SURVEY */
-
-function vote(answer){
-
-    let yes =
-        Number(localStorage.getItem("yesVotes")) || 0;
-
-    let no =
-        Number(localStorage.getItem("noVotes")) || 0;
-
-
-    if(localStorage.getItem("alreadyVoted")){
-
-        const msg =
-            document.getElementById("vote-message");
-
-        msg.style.display = "block";
-
-        msg.innerText =
-            "❤️ You have already submitted your vote.";
-
-        return;
-    }
-
-
-    if(answer === "yes"){
-        yes++;
-    }else{
-        no++;
-    }
-
-
-    localStorage.setItem("yesVotes",yes);
-    localStorage.setItem("noVotes",no);
-    localStorage.setItem("alreadyVoted","true");
-
-
-    showResults();
-
-
-    const msg =
-        document.getElementById("vote-message");
-
-    msg.style.display = "block";
-
-
-    if(answer === "yes"){
-
-        msg.innerText =
-            "❤️ Thank you! Your interest means a lot.";
-
-    }else{
-
-        msg.innerText =
-            "😊 Thank you for sharing your opinion.";
-
-    }
-
-}
-
-
-function showResults(){
-
-    const yes =
-        Number(localStorage.getItem("yesVotes")) || 0;
-
-    const no =
-        Number(localStorage.getItem("noVotes")) || 0;
-
-    const total = yes + no;
-
-
-    if(total === 0){
-        return;
-    }
-
-
-    const yesPercent =
-        Math.round((yes / total) * 100);
-
-    const noPercent =
-        100 - yesPercent;
-
-
-    document.getElementById("yes-percent").innerText =
-        yesPercent + "%";
-
-    document.getElementById("no-percent").innerText =
-        noPercent + "%";
-
-
-    document.getElementById("yes-bar").style.width =
-        yesPercent + "%";
-
-    document.getElementById("no-bar").style.width =
-        noPercent + "%";
-
-
-    document.getElementById("total-votes").innerText =
-        total + (total === 1 ? " vote" : " votes");
-
-}
-
-
-showResults();
-
-
-/* SCROLL REVEAL */
-
-const observer =
-    new IntersectionObserver(
-
-        entries => {
-
-            entries.forEach(entry => {
-
-                if(entry.isIntersecting){
-
-                    entry.target.classList.add("show");
-
-                    observer.unobserve(entry.target);
-
-                }
-
-            });
-
-        },
-
-        {
-            threshold:.12
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waziha Rahman | The Infinite Universe Masterpiece</title>
+    <meta name="description" content="Waziha Rahman Official Website — Created by MD. Pial in the best way possible.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Infinite Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-infinite: #000001;
+            --bg-glass-infinite: rgba(5, 5, 15, 0.8);
+            --bg-nav-infinite: rgba(0, 0, 1, 0.92);
+            
+            --inf-cyan: #00ffff;
+            --inf-magenta: #ff007f;
+            --inf-violet: #7000ff;
+            --inf-amber: #ffaa00;
+            
+            --text-white: #ffffff;
+            --text-gray: #a1a1aa;
+            
+            --border-infinite: rgba(255, 255, 255, 0.18);
+            --border-cyan-hyper: rgba(0, 255, 255, 1);
+            
+            --shadow-infinite: 0 60px 180px rgba(0, 0, 0, 0.99);
+            --shadow-magenta-glow: 0 0 70px rgba(255, 0, 127, 0.8);
+            --shadow-cyan-glow: 0 0 90px rgba(0, 255, 255, 0.9);
+            
+            --gradient-infinite: linear-gradient(135deg, var(--inf-cyan), var(--inf-violet), var(--inf-magenta));
         }
 
-    );
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
 
-document
-    .querySelectorAll(".reveal")
-    .forEach(element => {
+        ::selection {
+            background: var(--inf-magenta);
+            color: #fff;
+        }
 
-        observer.observe(element);
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--bg-infinite);
+            color: var(--text-white);
+            overflow-x: hidden;
+            position: relative;
+            line-height: 1.8;
+        }
+        /* Infinite Dimensional Orbs & Cyber Matrix */
+        .infinite-universe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+            background-image: radial-gradient(circle at 50% 50%, rgba(112, 0, 255, 0.08) 0%, transparent 70%);
+        }
 
-    });
+        .infinite-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(220px);
+            opacity: 0.35;
+            animation: infiniteOrbit 22s ease-in-out infinite alternate;
+        }
 
+        .inf-orb-1 {
+            width: 800px;
+            height: 800px;
+            background: var(--inf-cyan);
+            top: -300px;
+            left: -300px;
+        }
 
-/* BACK TO TOP */
+        .inf-orb-2 {
+            width: 900px;
+            height: 900px;
+            background: var(--inf-magenta);
+            bottom: -350px;
+            right: -350px;
+            animation-delay: -8s;
+        }
 
-const topButton =
-    document.getElementById("top");
+        .inf-orb-3 {
+            width: 700px;
+            height: 700px;
+            background: var(--inf-violet);
+            top: 35%;
+            left: 25%;
+            animation-delay: -15s;
+        }
 
+        @keyframes infiniteOrbit {
+            0% { transform: translateY(0) scale(1) rotate(0deg); }
+            50% { transform: translateY(80px) scale(1.3) rotate(180deg); }
+            100% { transform: translateY(-60px) scale(0.75) rotate(360deg); }
+        }
 
-window.addEventListener("scroll",()=>{
+        a { text-decoration: none; color: inherit; }
+                        /* Infinite Glass Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 26px 8%;
+            background: var(--bg-nav-infinite);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border-bottom: 1px solid var(--border-infinite);
+            transition: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
 
-    if(window.scrollY > 500){
+        .nav-inner {
+            max-width: 1500px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-        topButton.style.display = "block";
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
 
-    }else{
+        .logo span {
+            background: var(--gradient-infinite);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 25px rgba(0,255,255,0.8));
+        }
 
-        topButton.style.display = "none";
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
 
-    }
+        .nav-links a {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-gray);
+            transition: 0.4s;
+            position: relative;
+        }
 
-});
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--inf-cyan);
+            transition: 0.3s;
+            box-shadow: 0 0 15px var(--inf-cyan);
+        }
 
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--inf-cyan);
+            text-shadow: 0 0 30px rgba(0, 255, 255, 1);
+        }
 
-function goTop(){
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
 
-    window.scrollTo({
+        .menu-btn {
+            display: none;
+            width: 55px;
+            height: 55px;
+            border: 1px solid var(--border-infinite);
+            border-radius: 20px;
+            background: var(--bg-glass-infinite);
+            color: white;
+            font-size: 26px;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            }
+                        /* Hero & Supreme Profile Masterpiece */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 240px 20px 160px;
+            position: relative;
+        }
 
-        top:0,
-        behavior:"smooth"
+        .hero-content {
+            max-width: 1200px;
+            z-index: 2;
+        }
 
-    });
+        .profile-wrap {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 35px;
+        }
 
-}
+        .profile-image {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid rgba(255, 255, 255, 0.99);
+            box-shadow: 0 0 0 20px rgba(112, 0, 255, 0.35), var(--shadow-infinite);
+            transition: 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+            animation: infinitePicPulse 5s ease-in-out infinite alternate;
+        }
 
-</script>
+        @keyframes infinitePicPulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 20px rgba(112, 0, 255, 0.35), var(--shadow-infinite); }
+            100% { transform: scale(1.07); box-shadow: 0 0 0 28px rgba(0, 255, 255, 0.5), var(--shadow-cyan-glow); }
+        }
 
+        .verified-badge-hero {
+            position: absolute;
+            right: 15px;
+            bottom: 25px;
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: #2563eb;
+            border: 4px solid var(--bg-infinite);
+            color: white;
+            font-size: 20px;
+            box-shadow: 0 0 35px rgba(37, 99, 235, 1);
+        }
+
+        /* MD. Pial Custom Creator Badge */
+        .creator-badge {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 28px;
+            background: rgba(0, 255, 255, 0.08);
+            border: 1px solid rgba(0, 255, 255, 0.4);
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--inf-cyan);
+            letter-spacing: 1px;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+        }
+
+        .badge-wonder {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 30px;
+            border: 1px solid rgba(255, 170, 0, 0.7);
+            border-radius: 50px;
+            background: rgba(255, 170, 0, 0.12);
+            color: var(--inf-amber);
+            font-size: 15px;
+            font-weight: 900;
+            letter-spacing: 5px;
+            margin-bottom: 40px;
+            box-shadow: 0 0 40px rgba(255, 170, 0, 0.35);
+            text-transform: uppercase;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .badge-dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: var(--inf-amber);
+            box-shadow: 0 0 20px var(--inf-amber);
+            animation: pulseDot 1.5s infinite;
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.8); opacity: 0.3; }
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(60px, 10vw, 125px);
+            line-height: 1.1;
+            letter-spacing: -2px;
+            font-weight: 900;
+            margin-bottom: 40px;
+        }
+
+        .gradient-text {
+            background: var(--gradient-infinite);
+            background-size: 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientMove 6s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-description {
+            max-width: 900px;
+            margin: 0 auto 55px;
+            color: var(--text-gray);
+            font-size: 22px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 22px 45px;
+            border-radius: 24px;
+            font-size: 18px;
+            font-weight: 700;
+            transition: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            color: #000001;
+            background: var(--gradient-infinite);
+            background-size: 200%;
+            box-shadow: 0 20px 50px rgba(0, 255, 255, 0.5);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-10px) scale(1.06);
+            box-shadow: 0 35px 80px rgba(255, 0, 127, 0.75);
+        }
+
+        .btn-secondary {
+            background: var(--bg-glass-infinite);
+            border: 1px solid var(--border-infinite);
+            color: white;
+            backdrop-filter: blur(30px);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-10px) scale(1.06);
+            border-color: var(--inf-cyan);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 25px 60px rgba(0, 255, 255, 0.4);
+            }
+                    /* Sections & Infinite Glass Box System */
+        .section {
+            max-width: 1400px;
+            margin: auto;
+            padding: 160px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .heading {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto 80px;
+        }
+
+        .heading-label {
+            color: var(--inf-cyan);
+            font-size: 15px;
+            font-weight: 900;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .heading h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(40px, 7vw, 65px);
+            letter-spacing: -1px;
+            margin-bottom: 22px;
+            font-weight: 900;
+        }
+
+        .heading p {
+            color: var(--text-gray);
+            font-size: 20px;
+        }
+
+        .glass-box {
+            background: var(--bg-glass-infinite);
+            border: 1px solid var(--border-infinite);
+            box-shadow: var(--shadow-infinite);
+            backdrop-filter: blur(45px);
+            -webkit-backdrop-filter: blur(45px);
+            border-radius: 45px;
+            transition: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        /* About */
+        .about-box {
+            padding: 80px;
+            text-align: center;
+        }
+
+        .about-box p {
+            max-width: 1000px;
+            margin: auto;
+            color: var(--text-gray);
+            font-size: 22px;
+            line-height: 2.3;
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-card {
+            padding: 60px 45px;
+            border-radius: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-18px);
+            border-color: var(--border-cyan-hyper);
+            box-shadow: var(--shadow-cyan-glow);
+        }
+
+        .feature-icon {
+            width: 85px;
+            height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 26px;
+            font-size: 35px;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(112, 0, 255, 0.3));
+            border: 1px solid rgba(0, 255, 255, 0.4);
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.25);
+        }
+
+        .feature-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 26px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 18px;
+            }
+                    /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 45px;
+        }
+
+        .video-card {
+            padding: 22px;
+            border-radius: 42px;
+            overflow: hidden;
+        }
+
+        .video-card:hover {
+            transform: translateY(-16px);
+            border-color: var(--border-cyan-hyper);
+            box-shadow: var(--shadow-magenta-glow);
+        }
+
+        .gallery-video {
+            width: 100%;
+            display: block;
+            border-radius: 28px;
+            background: #000;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.9);
+            }
+                    /* Survey */
+        .survey-box {
+            max-width: 950px;
+            margin: auto;
+            padding: 80px 60px;
+            text-align: center;
+        }
+
+        .survey-icon {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: auto auto 40px;
+            border-radius: 50%;
+            font-size: 40px;
+            background: var(--gradient-infinite);
+            box-shadow: 0 25px 60px rgba(255, 0, 127, 0.5);
+        }
+
+        .survey-box h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 40px;
+            margin-bottom: 18px;
+        }
+
+        .survey-sub {
+            color: var(--text-gray);
+            margin-bottom: 50px;
+            font-size: 20px;
+        }
+
+        .survey-buttons {
+            display: flex;
+            gap: 22px;
+        }
+
+        .survey-buttons button {
+            flex: 1;
+            padding: 24px;
+            border-radius: 24px;
+            font-weight: 800;
+            font-size: 19px;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .btn-vote-yes {
+            color: #000001;
+            background: var(--gradient-infinite);
+            border: none;
+            box-shadow: 0 20px 50px rgba(0, 255, 255, 0.5);
+        }
+
+        .btn-vote-no {
+            color: white;
+            background: var(--bg-glass-infinite);
+            border: 1px solid var(--border-infinite);
+        }
+
+        .survey-buttons button:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-magenta-glow);
+        }
+
+        #vote-message {
+            display: none;
+            margin-top: 30px;
+            font-size: 19px;
+            font-weight: 700;
+            color: var(--inf-cyan);
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+
+        .results-wrap {
+            margin-top: 55px;
+            text-align: left;
+            background: rgba(0,0,0,0.4);
+            padding: 40px;
+            border-radius: 30px;
+            border: 1px solid var(--border-infinite);
+        }
+
+        .result-line {
+            display: flex;
+            justify-content: space-between;
+            margin: 22px 0 14px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .progress-bar-bg {
+            height: 16px;
+            overflow: hidden;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .progress-bar-fill {
+            width: 0;
+            height: 100%;
+            border-radius: 20px;
+            background: var(--gradient-infinite);
+            transition: 1.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+            box-shadow: 0 0 35px var(--inf-cyan);
+        }
+
+        #total-votes {
+            display: block;
+            text-align: center;
+            color: var(--text-gray);
+            margin-top: 30px;
+            font-size: 17px;
+            letter-spacing: 1px;
+            }
+                    /* FAQ */
+        .faq-container {
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        details {
+            background: var(--bg-glass-infinite);
+            border: 1px solid var(--border-infinite);
+            border-radius: 30px;
+            padding: 30px 40px;
+            margin-bottom: 22px;
+            transition: 0.4s;
+            backdrop-filter: blur(40px);
+        }
+
+        details:hover {
+            border-color: var(--border-cyan-hyper);
+            box-shadow: 0 0 40px rgba(0, 255, 255, 0.35);
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 20px;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        summary::after {
+            content: "+";
+            font-size: 30px;
+            color: var(--inf-cyan);
+            transition: 0.4s;
+        }
+
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        details p {
+            color: var(--text-gray);
+            font-size: 19px;
+            margin-top: 22px;
+            padding-top: 22px;
+            border-top: 1px solid var(--border-infinite);
+        }
+
+        /* Contact */
+        .contact-box {
+            text-align: center;
+            padding: 90px 50px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .contact-box p {
+            color: var(--text-gray);
+            margin-top: 16px;
+            font-size: 20px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+            flex-wrap: wrap;
+            margin-top: 55px;
+        }
+
+        .btn-fb {
+            background: #1877f2;
+            color: white;
+            box-shadow: 0 20px 50px rgba(24, 119, 242, 0.6);
+        }
+
+        .btn-wa {
+            background: #25d366;
+            color: white;
+            box-shadow: 0 20px 50px rgba(37, 211, 102, 0.6);
+        }
+
+        .contact-buttons .btn:hover {
+            transform: translateY(-9px) scale(1.06);
+            filter: brightness(1.3);
+            }
+                    /* Footer */
+        footer {
+            text-align: center;
+            padding: 100px 20px;
+            border-top: 1px solid var(--border-infinite);
+            color: var(--text-gray);
+            font-size: 17px;
+            background: rgba(0, 0, 1, 0.995);
+            position: relative;
+            z-index: 2;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+        /* Back to Top Button */
+        #topBtn {
+            position: fixed;
+            right: 45px;
+            bottom: 45px;
+            width: 70px;
+            height: 70px;
+            border: none;
+            border-radius: 50%;
+            background: var(--gradient-infinite);
+            color: white;
+            font-size: 26px;
+            cursor: pointer;
+            display: none;
+            z-index: 999;
+            box-shadow: var(--shadow-cyan-glow);
+            transition: 0.4s;
+        }
+
+        #topBtn:hover {
+            transform: translateY(-10px) scale(1.2);
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(80px);
+            transition: opacity 1.3s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Breakpoints */
+        @media(max-width: 950px) {
+            .features-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+
+        @media(max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100px;
+                left: 5%;
+                right: 5%;
+                padding: 30px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 16px;
+                background: var(--bg-nav-infinite);
+                border: 1px solid var(--border-infinite);
+                border-radius: 30px;
+                box-shadow: var(--shadow-infinite);
+                backdrop-filter: blur(45px);
+            }
+            .nav-links.active { display: flex; }
+            .nav-links a { padding: 18px; border-radius: 18px; text-align: center; background: rgba(255,255,255,0.04); }
+            .menu-btn { display: flex; }
+            .hero { padding-top: 190px; }
+            .about-box, .survey-box, .contact-box { padding: 55px 28px; }
+            .survey-buttons { flex-direction: column; }
+        }
+    </style>
+</head>
+    <body>
+
+    <!-- Infinite Dimensional Orbs -->
+    <div class="infinite-universe">
+        <div class="infinite-orb inf-orb-1"></div>
+        <div class="infinite-orb inf-orb-2"></div>
+        <div class="infinite-orb inf-orb-3"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="logo">
+                Waziha <span>Rahman</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#features">Features</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#survey">Survey</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="menu-btn" onclick="toggleMenu()" aria-label="Toggle Menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION (Profile Pic and Creator Credit Tag at the Very Top) -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <div class="profile-wrap">
+                <img src="1000001529.jpg" class="profile-image" alt="Waziha Rahman">
+                <div class="verified-badge-hero">✓</div>
+            </div>
+
+            <!-- MD. Pial Custom Credit Text -->
+            <div>
+                <span class="creator-badge">Created by MD. Pial in the best way possible</span>
+            </div>
+
+            <div class="badge-wonder">
+                <span class="badge-dot"></span>
+                The Absolute Infinite Masterpiece
+            </div>
+
+            <h1>
+                Waziha <span class="gradient-text">Rahman</span>
+            </h1>
+
+            <p class="hero-description">
+                Welcome to the absolute infinite digital manifestation of Waziha Rahman. Experience the pinnacle of universe-grade web architecture and flawless immersive elegance.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#gallery" class="btn btn-primary">
+                    🎬 Explore Gallery
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61588949437523" target="_blank" class="btn btn-secondary">
+                    📘 Official Facebook
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section class="section reveal" id="about">
+        <div class="heading">
+            <div class="heading-label">Introduction</div>
+            <h2>About Official Platform</h2>
+            <p>An infinite digital ecosystem crafted beyond imagination.</p>
+        </div>
+        <div class="glass-box about-box">
+            <p>
+                Welcome to the official web masterpiece of Waziha Rahman. This platform aggregates elite media updates, live interaction, and verified communication portals within a hyper-advanced, infinite user interface.
+            </p>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="section reveal" id="features">
+        <div class="heading">
+            <div class="heading-label">Highlights</div>
+            <h2>System Capabilities</h2>
+            <p>Engineered using ultra-modern visual aesthetics and supreme performance.</p>
+        </div>
+        <div class="features-grid">
+            <div class="glass-box feature-card">
+                <div class="feature-icon">🎬</div>
+                <h3>Exclusive Media</h3>
+                <p>Stream high-definition featured video streams directly through the built-in media deck.</p>
+            </div>
+            <div class="glass-box feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Infinite UI</h3>
+                <p>Immersive glassmorphism and multi-layered glowing neon geometry built to amaze.</p>
+            </div>
+            <div class="glass-box feature-card">
+                <div class="feature-icon">💜</div>
+                <h3>Live Engagement</h3>
+                <p>Participate in dynamic global voting modules with instant visual feedback.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="section reveal" id="gallery">
+        <div class="heading">
+            <div class="heading-label">Media Hub</div>
+            <h2>Featured Videos</h2>
+            <p>Watch and enjoy the official video content.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="glass-box video-card">
+                <video class="gallery-video" controls playsinline>
+                    <source src="Facebook_1783604846656(360p).mp4" type="video/mp4">
+                    Your browser does not support video playback.
+                </video>
+            </div>
+            <div class="glass-box video-card">
+                <video class="gallery-video" controls playsinline>
+                    <source src="Facebook_1783352252816(360p).mp4" type="video/mp4">
+                    Your browser does not support video playback.
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- SURVEY SECTION -->
+    <section class="section reveal" id="survey">
+        <div class="heading">
+            <div class="heading-label">Feedback</div>
+            <h2>What Do You Think?</h2>
+            <p>Record your stance on this ultimate infinite creation.</p>
+        </div>
+        <div class="glass-box survey-box">
+            <div class="survey-icon">💎</div>
+            <h2>Are you completely blown away by this website?</h2>
+            <p class="survey-sub">Cast your vote to update the live consensus instantly.</p>
+
+            <div class="survey-buttons">
+                <button class="btn-vote-yes" onclick="vote('yes')">❤️ Yes, Absolutely</button>
+                <button class="btn-vote-no" onclick="vote('no')">👎 Not Yet</button>
+            </div>
+
+            <div id="vote-message"></div>
+
+            <div class="results-wrap">
+                <div class="result-line">
+                    <span>❤️ Blown Away / Interested</span>
+                    <strong id="yes-percent">0%</strong>
+                </div>
+                <div class="progress-bar-bg">
+                    <div id="yes-bar" class="progress-bar-fill"></div>
+                </div>
+
+                <div class="result-line">
+                    <span>👎 Not Yet</span>
+                    <strong id="no-percent">0%</strong>
+                </div>
+                <div class="progress-bar-bg">
+                    <div id="no-bar" class="progress-bar-fill"></div>
+                </div>
+
+                <small id="total-votes">0 total votes</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section reveal" id="faq">
+        <div class="heading">
+            <div class="heading-label">Help Center</div>
+            <h2>Frequently Asked Questions</h2>
+            <p>Instant answers regarding the official infrastructure.</p>
+        </div>
+        <div class="faq-container">
+            <details>
+                <summary>What is this website?</summary>
+                <p>This is the official master platform of Waziha Rahman, established to broadcast verified updates, media, and social networks.</p>
+            </details>
+            <details>
+                <summary>Where can I locate the official social profile?</summary>
+                <p>You can instantly navigate to the verified Facebook page using the buttons embedded across the hero and contact panels.</p>
+            </details>
+            <details>
+                <summary>How can I initiate direct communication?</summary>
+                <p>You can reach out immediately through the official WhatsApp chat gateway provided in the contact hub.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="section reveal" id="contact">
+        <div class="heading">
+            <div class="heading-label">Connect</div>
+            <h2>Get In Touch</h2>
+            <p>Establish direct contact via authenticated official portals.</p>
+        </div>
+        <div class="glass-box contact-box">
+            <h2>Waziha Rahman Official</h2>
+            <p>Connect across official secure social channels and messaging lines.</p>
+            <div class="contact-buttons">
+                <a href="https://www.facebook.com/profile.php?id=61588949437523" target="_blank" class="btn btn-fb">
+                    📘 Official Facebook
+                </a>
+                <a href="https://wa.me/8801782088426" target="_blank" class="btn btn-wa">
+                    💬 WhatsApp (+8801782088426)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 <strong>Waziha Rahman</strong>. Created by MD. Pial in the best way possible. All Rights Reserved.</p>
+    </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="topBtn" onclick="scrollToTop()" aria-label="Back to Top">↑</button>
+
+    <!-- INFINITE JAVASCRIPT ENGINE -->
+    <script>
+        // Toggle Mobile Navigation Menu
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Intersection Observer for Smooth Reveal Animations
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Back to Top Button Control Logic
+        const topBtn = document.getElementById('topBtn');
+        window.onscroll = function() {
+            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+                topBtn.style.display = "block";
+            } else {
+                topBtn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Interactive Survey / Voting Engine backed by LocalStorage
+        let votes = JSON.parse(localStorage.getItem('waziha_infinite_universe_votes')) || { yes: 945, no: 3 };
+
+        function updateResults() {
+            let total = votes.yes + votes.no;
+            let yesPct = total > 0 ? Math.round((votes.yes / total) * 100) : 0;
+            let noPct = total > 0 ? Math.round((votes.no / total) * 100) : 0;
+
+            document.getElementById('yes-percent').innerText = yesPct + '%';
+            document.getElementById('no-percent').innerText = noPct + '%';
+            document.getElementById('yes-bar').style.width = yesPct + '%';
+            document.getElementById('no-bar').style.width = noPct + '%';
+            document.getElementById('total-votes').innerText = total + ' total votes';
+        }
+
+        function vote(type) {
+            if (localStorage.getItem('waziha_infinite_universe_voted')) {
+                let msg = document.getElementById('vote-message');
+                msg.style.display = 'block';
+                msg.innerText = '⚠️ Your vote has already been registered in this system!';
+                return;
+            }
+
+            if (type === 'yes') votes.yes++;
+            if (type === 'no') votes.no++;
+
+            localStorage.setItem('waziha_infinite_universe_voted', 'true');
+            localStorage.setItem('waziha_infinite_universe_votes', JSON.stringify(votes));
+
+            updateResults();
+
+            let msg = document.getElementById('vote-message');
+            msg.style.display = 'block';
+            msg.innerText = '❤️ Thank you for experiencing the Infinite Universe!';
+        }
+
+        // Initialize survey matrix on load
+        updateResults();
+    </script>
 </body>
-</html>                                          
+    </html>
+                
