@@ -1,1099 +1,505 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" id="htmlRoot" data-country="BD">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Waziha Rahman | The Infinite Universe Masterpiece</title>
-    <meta name="description" content="Waziha Rahman Official Website — Created by MD. Pial in the best way possible.">
-    <meta name="robots" content="index, follow">
+    <title>Waziha Rahman | Ultimate Pro Masterpiece</title>
+    <meta name="description" content="Waziha Rahman Official Website — Created by MD. Peyal in Bangladesh.">
+    
+    <!-- Geo & Country Meta (Bangladesh) -->
+    <meta name="geo.region" content="BD">
+    <meta name="geo.country" content="Bangladesh">
+    
+    <!-- PWA Manifest Link -->
+    <link rel="manifest" href="data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%22Waziha%20Rahman%20Masterpiece%22%2C%22short_name%22%3A%22WazihaApp%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23020208%22%2C%22theme_color%22%3A%22%2300f2fe%22%2C%22icons%22%3A%5B%7B%22src%22%3A%221000001529_2.jpg%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fjpeg%22%7D%5D%7D">
+    <meta name="theme-color" content="#00f2fe">
 
-    <!-- Infinite Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+        <style>
         :root {
-            --bg-infinite: #000001;
-            --bg-glass-infinite: rgba(5, 5, 15, 0.8);
-            --bg-nav-infinite: rgba(0, 0, 1, 0.92);
-            
-            --inf-cyan: #00ffff;
-            --inf-magenta: #ff007f;
-            --inf-violet: #7000ff;
-            --inf-amber: #ffaa00;
-            
-            --text-white: #ffffff;
-            --text-gray: #a1a1aa;
-            
-            --border-infinite: rgba(255, 255, 255, 0.18);
-            --border-cyan-hyper: rgba(0, 255, 255, 1);
-            
-            --shadow-infinite: 0 60px 180px rgba(0, 0, 0, 0.99);
-            --shadow-magenta-glow: 0 0 70px rgba(255, 0, 127, 0.8);
-            --shadow-cyan-glow: 0 0 90px rgba(0, 255, 255, 0.9);
-            
-            --gradient-infinite: linear-gradient(135deg, var(--inf-cyan), var(--inf-violet), var(--inf-magenta));
+            --bg-color: #020208;
+            --glass-bg: rgba(10, 10, 24, 0.82);
+            --neon-cyan: #00f2fe;
+            --neon-pink: #ff007f;
+            --neon-gold: #ffd700;
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
+            --border-glow: rgba(0, 242, 254, 0.35);
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        [data-theme="light"] {
+            --bg-color: #f0f2f5;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --neon-cyan: #0072ff;
+            --neon-pink: #d90368;
+            --neon-gold: #b38f00;
+            --text-main: #111827;
+            --text-muted: #4b5563;
+            --border-glow: rgba(0, 114, 255, 0.3);
         }
 
-        html {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
-        ::selection {
-            background: var(--inf-magenta);
-            color: #fff;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: 'Space Grotesk', sans-serif;
-            background-color: var(--bg-infinite);
-            color: var(--text-white);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             overflow-x: hidden;
-            position: relative;
-            line-height: 1.8;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.4s ease, color 0.4s ease;
         }
-        /* Infinite Dimensional Orbs & Cyber Matrix */
-        .infinite-universe {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            overflow: hidden;
-            background-image: radial-gradient(circle at 50% 50%, rgba(112, 0, 255, 0.08) 0%, transparent 70%);
+                    .universe-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: -1;
+            background: radial-gradient(circle at 50% 15%, rgba(15, 10, 35, 0.8) 0%, var(--bg-color) 85%);
         }
-
-        .infinite-orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(220px);
-            opacity: 0.35;
-            animation: infiniteOrbit 22s ease-in-out infinite alternate;
+        .glowing-orb {
+            position: absolute; width: 450px; height: 450px; border-radius: 50%;
+            filter: blur(140px); opacity: 0.22; will-change: transform;
+            animation: floatOrb 18s infinite alternate ease-in-out;
         }
-
-        .inf-orb-1 {
-            width: 800px;
-            height: 800px;
-            background: var(--inf-cyan);
-            top: -300px;
-            left: -300px;
+        .orb-1 { background: var(--neon-cyan); top: -120px; left: -120px; }
+        .orb-2 { background: var(--neon-pink); bottom: -120px; right: -120px; animation-delay: -6s; }
+        @keyframes floatOrb {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(35px) scale(1.1); }
+            }
+                        .navbar {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            background: var(--glass-bg); backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding: 14px 6%;
         }
-
-        .inf-orb-2 {
-            width: 900px;
-            height: 900px;
-            background: var(--inf-magenta);
-            bottom: -350px;
-            right: -350px;
-            animation-delay: -8s;
+        .nav-container {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
         }
-
-        .inf-orb-3 {
-            width: 700px;
-            height: 700px;
-            background: var(--inf-violet);
-            top: 35%;
-            left: 25%;
-            animation-delay: -15s;
-        }
-
-        @keyframes infiniteOrbit {
-            0% { transform: translateY(0) scale(1) rotate(0deg); }
-            50% { transform: translateY(80px) scale(1.3) rotate(180deg); }
-            100% { transform: translateY(-60px) scale(0.75) rotate(360deg); }
-        }
-
-        a { text-decoration: none; color: inherit; }
-                        /* Infinite Glass Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 26px 8%;
-            background: var(--bg-nav-infinite);
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(40px);
-            border-bottom: 1px solid var(--border-infinite);
-            transition: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-
-        .nav-inner {
-            max-width: 1500px;
-            margin: auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
         .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            font-size: 28px;
-            letter-spacing: 2px;
-        }
-
-        .logo span {
-            background: var(--gradient-infinite);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 25px rgba(0,255,255,0.8));
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .nav-links a {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--text-gray);
-            transition: 0.4s;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--inf-cyan);
-            transition: 0.3s;
-            box-shadow: 0 0 15px var(--inf-cyan);
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--inf-cyan);
-            text-shadow: 0 0 30px rgba(0, 255, 255, 1);
-        }
-
-        .nav-links a:hover::after, .nav-links a.active::after {
-            width: 100%;
-        }
-
-        .menu-btn {
-            display: none;
-            width: 55px;
-            height: 55px;
-            border: 1px solid var(--border-infinite);
-            border-radius: 20px;
-            background: var(--bg-glass-infinite);
-            color: white;
-            font-size: 26px;
-            cursor: pointer;
-            align-items: center;
-            justify-content: center;
-            }
-                        /* Hero & Supreme Profile Masterpiece */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 240px 20px 160px;
-            position: relative;
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            z-index: 2;
-        }
-
-        .profile-wrap {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 35px;
-        }
-
-        .profile-image {
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 6px solid rgba(255, 255, 255, 0.99);
-            box-shadow: 0 0 0 20px rgba(112, 0, 255, 0.35), var(--shadow-infinite);
-            transition: 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-            animation: infinitePicPulse 5s ease-in-out infinite alternate;
-        }
-
-        @keyframes infinitePicPulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 20px rgba(112, 0, 255, 0.35), var(--shadow-infinite); }
-            100% { transform: scale(1.07); box-shadow: 0 0 0 28px rgba(0, 255, 255, 0.5), var(--shadow-cyan-glow); }
-        }
-
-        .verified-badge-hero {
-            position: absolute;
-            right: 15px;
-            bottom: 25px;
-            width: 52px;
-            height: 52px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background: #2563eb;
-            border: 4px solid var(--bg-infinite);
-            color: white;
-            font-size: 20px;
-            box-shadow: 0 0 35px rgba(37, 99, 235, 1);
-        }
-
-        /* MD. Pial Custom Creator Badge */
-        .creator-badge {
-            display: inline-block;
-            margin-bottom: 30px;
-            padding: 12px 28px;
-            background: rgba(0, 255, 255, 0.08);
-            border: 1px solid rgba(0, 255, 255, 0.4);
-            border-radius: 30px;
-            font-size: 15px;
-            font-weight: 700;
-            color: var(--inf-cyan);
-            letter-spacing: 1px;
-            box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
-            backdrop-filter: blur(20px);
-        }
-
-        .badge-wonder {
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px 30px;
-            border: 1px solid rgba(255, 170, 0, 0.7);
-            border-radius: 50px;
-            background: rgba(255, 170, 0, 0.12);
-            color: var(--inf-amber);
-            font-size: 15px;
-            font-weight: 900;
-            letter-spacing: 5px;
-            margin-bottom: 40px;
-            box-shadow: 0 0 40px rgba(255, 170, 0, 0.35);
-            text-transform: uppercase;
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        .badge-dot {
-            width: 11px;
-            height: 11px;
-            border-radius: 50%;
-            background: var(--inf-amber);
-            box-shadow: 0 0 20px var(--inf-amber);
-            animation: pulseDot 1.5s infinite;
-        }
-
-        @keyframes pulseDot {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.8); opacity: 0.3; }
-        }
-
-        .hero h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: clamp(60px, 10vw, 125px);
-            line-height: 1.1;
-            letter-spacing: -2px;
-            font-weight: 900;
-            margin-bottom: 40px;
-        }
-
-        .gradient-text {
-            background: var(--gradient-infinite);
-            background-size: 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientMove 6s ease infinite;
-        }
-
-        @keyframes gradientMove {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .hero-description {
-            max-width: 900px;
-            margin: 0 auto 55px;
-            color: var(--text-gray);
-            font-size: 22px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 22px;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            padding: 22px 45px;
-            border-radius: 24px;
-            font-size: 18px;
-            font-weight: 700;
-            transition: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            color: #000001;
-            background: var(--gradient-infinite);
-            background-size: 200%;
-            box-shadow: 0 20px 50px rgba(0, 255, 255, 0.5);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-10px) scale(1.06);
-            box-shadow: 0 35px 80px rgba(255, 0, 127, 0.75);
-        }
-
-        .btn-secondary {
-            background: var(--bg-glass-infinite);
-            border: 1px solid var(--border-infinite);
-            color: white;
-            backdrop-filter: blur(30px);
-        }
-
-        .btn-secondary:hover {
-            transform: translateY(-10px) scale(1.06);
-            border-color: var(--inf-cyan);
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 25px 60px rgba(0, 255, 255, 0.4);
-            }
-                    /* Sections & Infinite Glass Box System */
-        .section {
-            max-width: 1400px;
-            margin: auto;
-            padding: 160px 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .heading {
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto 80px;
-        }
-
-        .heading-label {
-            color: var(--inf-cyan);
-            font-size: 15px;
-            font-weight: 900;
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            margin-bottom: 18px;
-            text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        .heading h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: clamp(40px, 7vw, 65px);
-            letter-spacing: -1px;
-            margin-bottom: 22px;
-            font-weight: 900;
-        }
-
-        .heading p {
-            color: var(--text-gray);
-            font-size: 20px;
-        }
-
-        .glass-box {
-            background: var(--bg-glass-infinite);
-            border: 1px solid var(--border-infinite);
-            box-shadow: var(--shadow-infinite);
-            backdrop-filter: blur(45px);
-            -webkit-backdrop-filter: blur(45px);
-            border-radius: 45px;
-            transition: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-
-        /* About */
-        .about-box {
-            padding: 80px;
-            text-align: center;
-        }
-
-        .about-box p {
-            max-width: 1000px;
-            margin: auto;
-            color: var(--text-gray);
-            font-size: 22px;
-            line-height: 2.3;
-        }
-
-        /* Features */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-
-        .feature-card {
-            padding: 60px 45px;
-            border-radius: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-18px);
-            border-color: var(--border-cyan-hyper);
-            box-shadow: var(--shadow-cyan-glow);
-        }
-
-        .feature-icon {
-            width: 85px;
-            height: 85px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 26px;
-            font-size: 35px;
-            margin-bottom: 40px;
-            background: linear-gradient(135deg, rgba(0, 255, 255, 0.3), rgba(112, 0, 255, 0.3));
-            border: 1px solid rgba(0, 255, 255, 0.4);
-            box-shadow: 0 0 40px rgba(0, 255, 255, 0.25);
-        }
-
-        .feature-card h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 26px;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-
-        .feature-card p {
-            color: var(--text-gray);
-            font-size: 18px;
-            }
-                    /* Gallery */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 45px;
-        }
-
-        .video-card {
-            padding: 22px;
-            border-radius: 42px;
-            overflow: hidden;
-        }
-
-        .video-card:hover {
-            transform: translateY(-16px);
-            border-color: var(--border-cyan-hyper);
-            box-shadow: var(--shadow-magenta-glow);
-        }
-
-        .gallery-video {
-            width: 100%;
-            display: block;
-            border-radius: 28px;
-            background: #000;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.9);
-            }
-                    /* Survey */
-        .survey-box {
-            max-width: 950px;
-            margin: auto;
-            padding: 80px 60px;
-            text-align: center;
-        }
-
-        .survey-icon {
-            width: 100px;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: auto auto 40px;
-            border-radius: 50%;
-            font-size: 40px;
-            background: var(--gradient-infinite);
-            box-shadow: 0 25px 60px rgba(255, 0, 127, 0.5);
-        }
-
-        .survey-box h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 40px;
-            margin-bottom: 18px;
-        }
-
-        .survey-sub {
-            color: var(--text-gray);
-            margin-bottom: 50px;
-            font-size: 20px;
-        }
-
-        .survey-buttons {
-            display: flex;
-            gap: 22px;
-        }
-
-        .survey-buttons button {
-            flex: 1;
-            padding: 24px;
-            border-radius: 24px;
-            font-weight: 800;
-            font-size: 19px;
-            cursor: pointer;
-            transition: 0.4s;
-        }
-
-        .btn-vote-yes {
-            color: #000001;
-            background: var(--gradient-infinite);
-            border: none;
-            box-shadow: 0 20px 50px rgba(0, 255, 255, 0.5);
-        }
-
-        .btn-vote-no {
-            color: white;
-            background: var(--bg-glass-infinite);
-            border: 1px solid var(--border-infinite);
-        }
-
-        .survey-buttons button:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-magenta-glow);
-        }
-
-        #vote-message {
-            display: none;
-            margin-top: 30px;
-            font-size: 19px;
-            font-weight: 700;
-            color: var(--inf-cyan);
-            text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
-        }
-
-        .results-wrap {
-            margin-top: 55px;
-            text-align: left;
-            background: rgba(0,0,0,0.4);
-            padding: 40px;
-            border-radius: 30px;
-            border: 1px solid var(--border-infinite);
-        }
-
-        .result-line {
-            display: flex;
-            justify-content: space-between;
-            margin: 22px 0 14px;
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        .progress-bar-bg {
-            height: 16px;
-            overflow: hidden;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255,255,255,0.06);
-        }
-
-        .progress-bar-fill {
-            width: 0;
-            height: 100%;
-            border-radius: 20px;
-            background: var(--gradient-infinite);
-            transition: 1.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-            box-shadow: 0 0 35px var(--inf-cyan);
-        }
-
-        #total-votes {
-            display: block;
-            text-align: center;
-            color: var(--text-gray);
-            margin-top: 30px;
-            font-size: 17px;
-            letter-spacing: 1px;
-            }
-                    /* FAQ */
-        .faq-container {
-            max-width: 1050px;
-            margin: auto;
-        }
-
-        details {
-            background: var(--bg-glass-infinite);
-            border: 1px solid var(--border-infinite);
-            border-radius: 30px;
-            padding: 30px 40px;
-            margin-bottom: 22px;
-            transition: 0.4s;
-            backdrop-filter: blur(40px);
-        }
-
-        details:hover {
-            border-color: var(--border-cyan-hyper);
-            box-shadow: 0 0 40px rgba(0, 255, 255, 0.35);
-        }
-
-        summary {
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 20px;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        summary::after {
-            content: "+";
-            font-size: 30px;
-            color: var(--inf-cyan);
-            transition: 0.4s;
-        }
-
-        details[open] summary::after {
-            transform: rotate(45deg);
-        }
-
-        details p {
-            color: var(--text-gray);
-            font-size: 19px;
-            margin-top: 22px;
-            padding-top: 22px;
-            border-top: 1px solid var(--border-infinite);
-        }
-
-        /* Contact */
-        .contact-box {
-            text-align: center;
-            padding: 90px 50px;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .contact-box p {
-            color: var(--text-gray);
-            margin-top: 16px;
-            font-size: 20px;
-        }
-
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 22px;
-            flex-wrap: wrap;
-            margin-top: 55px;
-        }
-
-        .btn-fb {
-            background: #1877f2;
-            color: white;
-            box-shadow: 0 20px 50px rgba(24, 119, 242, 0.6);
-        }
-
-        .btn-wa {
-            background: #25d366;
-            color: white;
-            box-shadow: 0 20px 50px rgba(37, 211, 102, 0.6);
-        }
-
-        .contact-buttons .btn:hover {
-            transform: translateY(-9px) scale(1.06);
-            filter: brightness(1.3);
-            }
-                    /* Footer */
-        footer {
-            text-align: center;
-            padding: 100px 20px;
-            border-top: 1px solid var(--border-infinite);
-            color: var(--text-gray);
-            font-size: 17px;
-            background: rgba(0, 0, 1, 0.995);
-            position: relative;
-            z-index: 2;
-        }
-
-        footer strong {
-            color: white;
-        }
-
-        /* Back to Top Button */
-        #topBtn {
-            position: fixed;
-            right: 45px;
-            bottom: 45px;
-            width: 70px;
-            height: 70px;
-            border: none;
-            border-radius: 50%;
-            background: var(--gradient-infinite);
-            color: white;
-            font-size: 26px;
-            cursor: pointer;
-            display: none;
-            z-index: 999;
-            box-shadow: var(--shadow-cyan-glow);
-            transition: 0.4s;
-        }
-
-        #topBtn:hover {
-            transform: translateY(-10px) scale(1.2);
-        }
-
-        /* Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(80px);
-            transition: opacity 1.3s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-        }
-
-        .reveal.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Responsive Breakpoints */
-        @media(max-width: 950px) {
-            .features-grid { grid-template-columns: 1fr; }
-            .gallery-grid { grid-template-columns: 1fr; }
-        }
-
-        @media(max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100px;
-                left: 5%;
-                right: 5%;
-                padding: 30px;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 16px;
-                background: var(--bg-nav-infinite);
-                border: 1px solid var(--border-infinite);
-                border-radius: 30px;
-                box-shadow: var(--shadow-infinite);
-                backdrop-filter: blur(45px);
-            }
-            .nav-links.active { display: flex; }
-            .nav-links a { padding: 18px; border-radius: 18px; text-align: center; background: rgba(255,255,255,0.04); }
-            .menu-btn { display: flex; }
-            .hero { padding-top: 190px; }
-            .about-box, .survey-box, .contact-box { padding: 55px 28px; }
-            .survey-buttons { flex-direction: column; }
-        }
+            font-family: 'Orbitron', sans-serif; font-size: 15px; font-weight: 800;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .nav-right { display: flex; align-items: center; gap: 15px; }
+        .nav-menu { display: flex; gap: 18px; list-style: none; }
+        .nav-menu a {
+            color: var(--text-muted); text-decoration: none; font-size: 12px; font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+        .nav-menu a:hover { color: var(--neon-cyan); text-shadow: 0 0 12px var(--neon-cyan); }
+
+        .tool-btns { display: flex; gap: 8px; align-items: center; }
+        .control-btn {
+            background: rgba(255, 255, 255, 0.1); border: 1px solid var(--border-glow);
+            color: var(--text-main); padding: 5px 10px; border-radius: 15px;
+            cursor: pointer; font-size: 11px; font-weight: 700; transition: var(--transition-smooth);
+        }
+        .control-btn:hover { background: var(--neon-cyan); color: #020208; transform: scale(1.05); }
+
+        .install-app-btn {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: white; border: none; padding: 5px 12px; border-radius: 15px;
+            cursor: pointer; font-size: 11px; font-weight: 700; transition: var(--transition-smooth);
+            display: none; box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
+        }
+        .install-app-btn:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(34, 197, 94, 0.7); }
     </style>
 </head>
     <body>
-
-    <!-- Infinite Dimensional Orbs -->
-    <div class="infinite-universe">
-        <div class="infinite-orb inf-orb-1"></div>
-        <div class="infinite-orb inf-orb-2"></div>
-        <div class="infinite-orb inf-orb-3"></div>
+    <div class="universe-bg" aria-hidden="true">
+        <div class="glowing-orb orb-1"></div>
+        <div class="glowing-orb orb-2"></div>
     </div>
 
     <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="nav-inner">
-            <a href="#home" class="logo">
-                Waziha <span>Rahman</span>
-            </a>
-            <div class="nav-links" id="navLinks">
-                <a href="#home" class="active">Home</a>
-                <a href="#about">About</a>
-                <a href="#features">Features</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#survey">Survey</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact</a>
+    <nav class="navbar" aria-label="Main Navigation">
+        <div class="nav-container">
+            <div class="logo">Waziha Rahman</div>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><a href="#home" onclick="playSound()" data-key="nav_home">Home</a></li>
+                    <li><a href="#about" onclick="playSound()" data-key="nav_about">About</a></li>
+                    <li><a href="#gallery" onclick="playSound()" data-key="nav_gallery">Gallery</a></li>
+                    <li><a href="#contact" onclick="playSound()" data-key="nav_contact">Contact</a></li>
+                </ul>
+                <div class="tool-btns">
+                    <button class="install-app-btn" id="installBtn" onclick="installApp()" data-key="btn_install">Install App</button>
+                    <button class="control-btn" id="langToggle" onclick="toggleLanguage()">বাংলা</button>
+                    <button class="control-btn" id="themeToggle" onclick="toggleTheme()">🌙</button>
+                </div>
             </div>
-            <button class="menu-btn" onclick="toggleMenu()" aria-label="Toggle Menu">☰</button>
         </div>
     </nav>
 
-    <!-- HERO SECTION (Profile Pic and Creator Credit Tag at the Very Top) -->
-    <header class="hero" id="home">
-        <div class="hero-content">
-            <div class="profile-wrap">
-                <img src="1000001529.jpg" class="profile-image" alt="Waziha Rahman">
-                <div class="verified-badge-hero">✓</div>
+    <!-- HERO SECTION -->
+    <header class="hero" id="home" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 130px 20px 60px;">
+        <div class="hero-content" style="max-width: 650px;">
+            <div class="profile-container" style="position: relative; width: 150px; height: 150px; margin: 0 auto 20px;">
+                <img src="1000001529_2.jpg" class="profile-pic" alt="Waziha Rahman Profile Picture" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid var(--neon-cyan); box-shadow: 0 0 25px rgba(0, 242, 254, 0.4);" loading="lazy">
+                <div class="verified-badge" style="position: absolute; bottom: 4px; right: 4px; background: #2563eb; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; border: 2px solid var(--bg-color);">✓</div>
             </div>
 
-            <!-- MD. Pial Custom Credit Text -->
             <div>
-                <span class="creator-badge">Created by MD. Pial in the best way possible</span>
+                <span class="creator-tag" style="display: inline-block; padding: 5px 14px; background: rgba(0, 242, 254, 0.08); border: 1px solid var(--border-glow); border-radius: 20px; font-size: 11px; font-weight: 600; color: var(--neon-cyan); margin-bottom: 14px;">Created by MD. Pial in Bangladesh</span>
             </div>
 
-            <div class="badge-wonder">
-                <span class="badge-dot"></span>
-                The Absolute Infinite Masterpiece
-            </div>
+            <h1 style="font-family: 'Orbitron', sans-serif; font-size: clamp(26px, 4.5vw, 42px); font-weight: 800; margin-bottom: 12px;">Waziha <span class="gradient-title" style="background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Rahman</span></h1>
+            <p data-key="hero_desc" style="color: var(--text-muted); font-size: 13px; max-width: 480px; margin: 0 auto 25px;">The ultimate professional master creation engineered with absolute precision in Bangladesh.</p>
 
-            <h1>
-                Waziha <span class="gradient-text">Rahman</span>
-            </h1>
-
-            <p class="hero-description">
-                Welcome to the absolute infinite digital manifestation of Waziha Rahman. Experience the pinnacle of universe-grade web architecture and flawless immersive elegance.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#gallery" class="btn btn-primary">
-                    🎬 Explore Gallery
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=61588949437523" target="_blank" class="btn btn-secondary">
-                    📘 Official Facebook
-                </a>
+            <div class="btn-group" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                <a href="#gallery" class="btn btn-primary" onclick="playSound()" data-key="btn_explore" style="padding: 9px 22px; border-radius: 10px; font-size: 12px; font-weight: 600; text-decoration: none; background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink)); color: #020208;">Explore Media</a>
+                <a href="https://www.facebook.com/profile.php?id=61588949437523" target="_blank" rel="noopener noreferrer" class="btn btn-primary" onclick="playSound()" data-key="btn_fb" style="padding: 9px 22px; border-radius: 10px; font-size: 12px; font-weight: 600; text-decoration: none; background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink)); color: #020208;">Official FB</a>
             </div>
         </div>
-    </header>
-
-    <!-- ABOUT SECTION -->
-    <section class="section reveal" id="about">
-        <div class="heading">
-            <div class="heading-label">Introduction</div>
-            <h2>About Official Platform</h2>
-            <p>An infinite digital ecosystem crafted beyond imagination.</p>
-        </div>
-        <div class="glass-box about-box">
-            <p>
-                Welcome to the official web masterpiece of Waziha Rahman. This platform aggregates elite media updates, live interaction, and verified communication portals within a hyper-advanced, infinite user interface.
-            </p>
-        </div>
-    </section>
-
-    <!-- FEATURES SECTION -->
-    <section class="section reveal" id="features">
-        <div class="heading">
-            <div class="heading-label">Highlights</div>
-            <h2>System Capabilities</h2>
-            <p>Engineered using ultra-modern visual aesthetics and supreme performance.</p>
-        </div>
-        <div class="features-grid">
-            <div class="glass-box feature-card">
-                <div class="feature-icon">🎬</div>
-                <h3>Exclusive Media</h3>
-                <p>Stream high-definition featured video streams directly through the built-in media deck.</p>
-            </div>
-            <div class="glass-box feature-card">
-                <div class="feature-icon">✨</div>
-                <h3>Infinite UI</h3>
-                <p>Immersive glassmorphism and multi-layered glowing neon geometry built to amaze.</p>
-            </div>
-            <div class="glass-box feature-card">
-                <div class="feature-icon">💜</div>
-                <h3>Live Engagement</h3>
-                <p>Participate in dynamic global voting modules with instant visual feedback.</p>
+                    </header>
+            <!-- ABOUT SECTION -->
+    <section class="section" id="about" style="max-width: 1050px; margin: 0 auto; padding: 70px 20px;">
+        <div class="glass-card" style="background: var(--glass-bg); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); border-radius: 18px; padding: 28px; text-align: center;">
+            <h2 class="section-title" data-key="about_title" style="font-family: 'Orbitron', sans-serif; font-size: 18px; margin-bottom: 12px;">About Platform</h2>
+            <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 10px;" data-key="about_desc">Welcome to the official enterprise-grade digital space of Waziha Rahman, hosted securely in Bangladesh.</p>
+            <div class="live-visitor-badge" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 20px; font-size: 12px; font-weight: 600; color: #22c55e; margin-top: 15px;">
+                <span class="live-dot" style="width: 8px; height: 8px; background-color: #22c55e; border-radius: 50%;"></span>
+                <span id="visitor-count">Live Visitors (BD): Loading...</span>
             </div>
         </div>
     </section>
-
-    <!-- GALLERY SECTION -->
-    <section class="section reveal" id="gallery">
-        <div class="heading">
-            <div class="heading-label">Media Hub</div>
-            <h2>Featured Videos</h2>
-            <p>Watch and enjoy the official video content.</p>
-        </div>
-        <div class="gallery-grid">
-            <div class="glass-box video-card">
-                <video class="gallery-video" controls playsinline>
+            <!-- GALLERY SECTION -->
+    <section class="section" id="gallery" style="max-width: 1050px; margin: 0 auto; padding: 70px 20px;">
+        <h2 class="section-title" data-key="gallery_title" style="font-family: 'Orbitron', sans-serif; font-size: 18px; margin-bottom: 12px; text-align: center;">Featured Media Hub</h2>
+        <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 25px;">
+            <div class="video-box" style="background: var(--glass-bg); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 8px;">
+                <video class="gallery-video" controls preload="metadata" playsinline style="width: 100%; border-radius: 10px; display: block; background: #000;">
                     <source src="Facebook_1783604846656(360p).mp4" type="video/mp4">
-                    Your browser does not support video playback.
                 </video>
             </div>
-            <div class="glass-box video-card">
-                <video class="gallery-video" controls playsinline>
+            <div class="video-box" style="background: var(--glass-bg); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 8px;">
+                <video class="gallery-video" controls preload="metadata" playsinline style="width: 100%; border-radius: 10px; display: block; background: #000;">
                     <source src="Facebook_1783352252816(360p).mp4" type="video/mp4">
-                    Your browser does not support video playback.
                 </video>
             </div>
         </div>
     </section>
-
-    <!-- SURVEY SECTION -->
-    <section class="section reveal" id="survey">
-        <div class="heading">
-            <div class="heading-label">Feedback</div>
-            <h2>What Do You Think?</h2>
-            <p>Record your stance on this ultimate infinite creation.</p>
-        </div>
-        <div class="glass-box survey-box">
-            <div class="survey-icon">💎</div>
-            <h2>Are you completely blown away by this website?</h2>
-            <p class="survey-sub">Cast your vote to update the live consensus instantly.</p>
-
-            <div class="survey-buttons">
-                <button class="btn-vote-yes" onclick="vote('yes')">❤️ Yes, Absolutely</button>
-                <button class="btn-vote-no" onclick="vote('no')">👎 Not Yet</button>
-            </div>
-
-            <div id="vote-message"></div>
-
-            <div class="results-wrap">
-                <div class="result-line">
-                    <span>❤️ Blown Away / Interested</span>
-                    <strong id="yes-percent">0%</strong>
-                </div>
-                <div class="progress-bar-bg">
-                    <div id="yes-bar" class="progress-bar-fill"></div>
-                </div>
-
-                <div class="result-line">
-                    <span>👎 Not Yet</span>
-                    <strong id="no-percent">0%</strong>
-                </div>
-                <div class="progress-bar-bg">
-                    <div id="no-bar" class="progress-bar-fill"></div>
-                </div>
-
-                <small id="total-votes">0 total votes</small>
+            <!-- CONTACT SECTION -->
+    <section class="section" id="contact" style="max-width: 1050px; margin: 0 auto; padding: 70px 20px;">
+        <div class="glass-card" style="background: var(--glass-bg); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 18px; padding: 35px 20px; text-align: center;">
+            <h2 class="section-title" data-key="contact_title" style="font-family: 'Orbitron', sans-serif; font-size: 18px; margin-bottom: 12px;">Get In Touch</h2>
+            <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 15px;" data-key="contact_desc">Connect directly through authenticated official portals in Bangladesh.</p>
+            <div class="social-btns" style="display: flex; justify-content: center; gap: 12px; margin-top: 16px;">
+                <a href="https://www.facebook.com/profile.php?id=61588949437523" target="_blank" rel="noopener noreferrer" class="btn" onclick="playSound()" style="padding: 8px 18px; border-radius: 8px; background: #1877f2; color: white; text-decoration: none; font-size: 12px;">Facebook</a>
+                <a href="https://wa.me/8801782088426" target="_blank" rel="noopener noreferrer" class="btn" onclick="playSound()" style="padding: 8px 18px; border-radius: 8px; background: #25d366; color: white; text-decoration: none; font-size: 12px;">WhatsApp</a>
             </div>
         </div>
     </section>
+            <!-- VOTING SECTION (Over 20,000+ Likes) -->
+    <section class="voting-section" style="max-width: 650px; margin: 30px auto 70px; padding: 30px 22px; background: var(--glass-bg); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; text-align: center;">
+        <h3 data-key="vote_title" style="font-family: 'Orbitron', sans-serif; font-size: 16px; margin-bottom: 6px;">Rate This Masterpiece</h3>
+        <p data-key="vote_desc" style="color: var(--text-muted); font-size: 12px; margin-bottom: 20px;">Give your honest feedback on this creation.</p>
 
-    <!-- FAQ SECTION -->
-    <section class="section reveal" id="faq">
-        <div class="heading">
-            <div class="heading-label">Help Center</div>
-            <h2>Frequently Asked Questions</h2>
-            <p>Instant answers regarding the official infrastructure.</p>
+        <div class="vote-btn-group" style="display: flex; gap: 12px; justify-content: center; margin-bottom: 20px;">
+            <button class="vote-btn" onclick="castVote('yes')" data-key="vote_yes" style="padding: 9px 20px; border-radius: 10px; font-weight: 600; font-size: 12px; cursor: pointer; border: none; background: linear-gradient(135deg, var(--neon-cyan), #0072ff); color: #020208;">❤️ Love It</button>
+            <button class="vote-btn" onclick="castVote('no')" data-key="vote_no" style="padding: 9px 20px; border-radius: 10px; font-weight: 600; font-size: 12px; cursor: pointer; border: 1px solid rgba(255,255,255,0.12); background: rgba(255, 255, 255, 0.08); color: var(--text-main);">👍 Good</button>
         </div>
-        <div class="faq-container">
-            <details>
-                <summary>What is this website?</summary>
-                <p>This is the official master platform of Waziha Rahman, established to broadcast verified updates, media, and social networks.</p>
-            </details>
-            <details>
-                <summary>Where can I locate the official social profile?</summary>
-                <p>You can instantly navigate to the verified Facebook page using the buttons embedded across the hero and contact panels.</p>
-            </details>
-            <details>
-                <summary>How can I initiate direct communication?</summary>
-                <p>You can reach out immediately through the official WhatsApp chat gateway provided in the contact hub.</p>
-            </details>
-        </div>
-    </section>
 
-    <!-- CONTACT SECTION -->
-    <section class="section reveal" id="contact">
-        <div class="heading">
-            <div class="heading-label">Connect</div>
-            <h2>Get In Touch</h2>
-            <p>Establish direct contact via authenticated official portals.</p>
-        </div>
-        <div class="glass-box contact-box">
-            <h2>Waziha Rahman Official</h2>
-            <p>Connect across official secure social channels and messaging lines.</p>
-            <div class="contact-buttons">
-                <a href="https://www.facebook.com/profile.php?id=61588949437523" target="_blank" class="btn btn-fb">
-                    📘 Official Facebook
-                </a>
-                <a href="https://wa.me/8801782088426" target="_blank" class="btn btn-wa">
-                    💬 WhatsApp (+8801782088426)
-                </a>
+        <div class="vote-stats" style="text-align: left; background: rgba(0, 0, 0, 0.15); padding: 14px; border-radius: 10px; font-size: 12px;">
+            <div class="stat-row" style="display: flex; justify-content: space-between; margin-bottom: 6px; font-weight: 600;">
+                <span data-key="vote_approval">Approval Rating</span>
+                <span id="yes-pct">99%</span>
             </div>
+            <div class="progress-bar" style="width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; margin-bottom: 10px;">
+                <div class="progress-fill" id="p-bar" style="height: 100%; background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink)); width: 98%;"></div>
+            </div>
+            <div class="total-likes" id="total-display" style="text-align: center; color: var(--neon-gold); font-weight: 700; font-size: 12px;">🔥 Total Likes & Votes: 20,000</div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 <strong>Waziha Rahman</strong>. Created by MD. Pial in the best way possible. All Rights Reserved.</p>
+    <!-- AI CHATBOT FLOATING WIDGET (Waziha Rahman | Tell Us / আমাদেরকে বলুন) -->
+    <style>
+        .ai-chat-bubble {
+            position: fixed; bottom: 25px; right: 25px; z-index: 9999;
+            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+            color: #020208; width: 55px; height: 55px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; box-shadow: 0 0 25px rgba(0, 242, 254, 0.5);
+            font-size: 22px; transition: var(--transition-smooth);
+        }
+        .ai-chat-bubble:hover { transform: scale(1.1); }
+        
+        .ai-chat-box {
+            position: fixed; bottom: 95px; right: 25px; width: 340px; height: 440px;
+            background: var(--glass-bg); backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 18px;
+            z-index: 9999; display: none; flex-direction: column; overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+        }
+        .ai-chat-header {
+            background: rgba(0, 0, 0, 0.3); padding: 12px 15px;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .ai-chat-title { font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 700; color: var(--neon-cyan); }
+        .ai-close-btn { background: none; border: none; color: var(--text-main); cursor: pointer; font-size: 16px; }
+        
+        .ai-chat-messages { flex: 1; padding: 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 12px; }
+        .ai-msg { padding: 8px 12px; border-radius: 10px; max-width: 80%; line-height: 1.4; }
+        .ai-msg.bot { background: rgba(0, 242, 254, 0.1); border: 1px solid var(--border-glow); align-self: flex-start; color: var(--text-main); }
+        .ai-msg.user { background: linear-gradient(135deg, var(--neon-cyan), #0072ff); color: #020208; align-self: flex-end; font-weight: 600; }
+        
+        .ai-chat-input-area { padding: 10px; display: flex; gap: 8px; border-top: 1px solid rgba(255, 255, 255, 0.08); background: rgba(0,0,0,0.2); }
+        .ai-input { flex: 1; padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: var(--text-main); font-size: 12px; outline: none; }
+        .ai-send-btn { padding: 8px 14px; border-radius: 8px; background: var(--neon-cyan); color: #020208; border: none; font-weight: 700; cursor: pointer; font-size: 12px; }
+    </style>
+
+    <div class="ai-chat-bubble" onclick="toggleChatWindow()" title="Chat with Waziha Rahman">💬</div>
+
+    <div class="ai-chat-box" id="aiChatBox">
+        <div class="ai-chat-header">
+            <span class="ai-chat-title" id="aiHeaderTitle">Waziha Rahman | Tell Us</span>
+            <button class="ai-close-btn" onclick="toggleChatWindow()">✕</button>
+        </div>
+        <div class="ai-chat-messages" id="aiMessages">
+            <div class="ai-msg bot" id="aiWelcomeMsg">Hello! I am Waziha Rahman. Tell us what you want to know or share your thoughts!</div>
+        </div>
+        <div class="ai-chat-input-area">
+            <input type="text" class="ai-input" id="aiUserInput" placeholder="Type a message..." onkeypress="handleChatKey(event)">
+            <button class="ai-send-btn" onclick="sendAiMessage()" data-key="chat_send">Send</button>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 25px; font-size: 11px; color: var(--text-muted); border-top: 1px solid rgba(255, 255, 255, 0.05);">
+        <p>&copy; 2026 Waziha Rahman. Created by MD. Pial in Bangladesh. All Rights Reserved.</p>
     </footer>
+        <script>
+        // 1. PWA App Install Handler
+        let deferredPrompt;
+        const installBtn = document.getElementById('installBtn');
 
-    <!-- BACK TO TOP BUTTON -->
-    <button id="topBtn" onclick="scrollToTop()" aria-label="Back to Top">↑</button>
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.style.display = 'inline-block';
+        });
 
-    <!-- INFINITE JAVASCRIPT ENGINE -->
-    <script>
-        // Toggle Mobile Navigation Menu
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
+        function installApp() {
+            playSound();
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        installBtn.style.display = 'none';
+                    }
+                    deferredPrompt = null;
+                });
+            } else {
+                alert(currentLang === 'bn' ? 'ℹ️ অ্যাপটি ইনস্টল করতে ব্রাউজারের থ্রি-ডট মেনু থেকে "Install app" এ ক্লিক করুন।' : 'ℹ️ To install, click "Install app" from your browser menu.');
+            }
         }
 
-        // Intersection Observer for Smooth Reveal Animations
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // Back to Top Button Control Logic
-        const topBtn = document.getElementById('topBtn');
-        window.onscroll = function() {
-            if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-                topBtn.style.display = "block";
-            } else {
-                topBtn.style.display = "none";
+        // 2. Multi-Language Dictionary (Default: English, Toggle: Bengali)
+        const langData = {
+            en: {
+                nav_home: "Home", nav_about: "About", nav_gallery: "Gallery", nav_contact: "Contact",
+                btn_install: "Install App",
+                hero_desc: "The ultimate professional master creation engineered with absolute precision in Bangladesh.",
+                btn_explore: "Explore Media", btn_fb: "Official FB",
+                about_title: "About Platform", about_desc: "Welcome to the official enterprise-grade digital space of Waziha Rahman, hosted securely in Bangladesh.",
+                gallery_title: "Featured Media Hub",
+                contact_title: "Get In Touch", contact_desc: "Connect directly through authenticated official portals in Bangladesh.",
+                vote_title: "Rate This Masterpiece", vote_desc: "Give your honest feedback on this creation.",
+                vote_yes: "❤️ Love It", vote_no: "👍 Good", vote_approval: "Approval Rating",
+                chat_title: "Waziha Rahman | Tell Us",
+                chat_welcome: "Hello! I am Waziha Rahman. Tell us what you want to know or share your thoughts!",
+                chat_placeholder: "Type a message...",
+                chat_send: "Send"
+            },
+            bn: {
+                nav_home: "হোম", nav_about: "সম্পর্কে", nav_gallery: "গ্যালারি", nav_contact: "যোগাযোগ",
+                btn_install: "অ্যাপ ইনস্টল",
+                hero_desc: "বাংলাদেশে অত্যন্ত নিখুঁত নির্ভুলতা এবং অ্যাপ ইনস্টলেশন সাপোর্ট দিয়ে তৈরি চূড়ান্ত পেশাদার মাস্টারপিস।",
+                btn_explore: "মিডিয়া দেখুন", btn_fb: "অফিশিয়াল এফবি",
+                about_title: "প্ল্যাটফর্ম সম্পর্কে", about_desc: "ওয়াজিহা রহমানের অফিসিয়াল ডিজিটাল স্পেসে স্বাগতম, যা বাংলাদেশে অত্যন্ত নিরাপদে হোস্ট করা হয়েছে।",
+                gallery_title: "ফিচার্ড মিডিয়া হাব",
+                contact_title: "যোগাযোগ করুন", contact_desc: "বাংলাদেশের যাচাইকৃত অফিসিয়াল পোর্টালের মাধ্যমে সরাসরি সংযুক্ত হোন।",
+                vote_title: "এই মাস্টারপিসটি রেট করুন", vote_desc: "এই সৃষ্টি সম্পর্কে আপনার সৎ মতামত দিন।",
+                vote_yes: "❤️ অনেক ভালো লেগেছে", vote_no: "👍 ভালো", vote_approval: "অনুমোদন রেটিং",
+                chat_title: "ওয়াজিয়া রহমান | আমাদেরকে বলুন",
+                chat_welcome: "হ্যালো! আমি ওয়াজিয়া রহমান। আমাদের বলুন আপনার কী জানা দরকার বা আপনার মতামত শেয়ার করুন!",
+                chat_placeholder: "কিছু লিখুন...",
+                chat_send: "পাঠান"
             }
         };
 
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Default language set strictly to English as requested
+        let currentLang = localStorage.getItem('waziha_lang') || 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('waziha_lang', lang);
+            document.getElementById('langToggle').innerText = lang === 'en' ? 'বাংলা' : 'ENG';
+            document.documentElement.setAttribute('lang', lang);
+
+            document.querySelectorAll('[data-key]').forEach(el => {
+                let key = el.getAttribute('data-key');
+                if (langData[lang][key]) {
+                    el.innerText = langData[lang][key];
+                }
+            });
+
+            // Update specific chatbot dynamic elements
+            document.getElementById('aiHeaderTitle').innerText = langData[lang]['chat_title'];
+            document.getElementById('aiWelcomeMsg').innerText = langData[lang]['chat_welcome'];
+            document.getElementById('aiUserInput').placeholder = langData[lang]['chat_placeholder'];
         }
 
-        // Interactive Survey / Voting Engine backed by LocalStorage
-        let votes = JSON.parse(localStorage.getItem('waziha_infinite_universe_votes')) || { yes: 945, no: 3 };
-
-        function updateResults() {
-            let total = votes.yes + votes.no;
-            let yesPct = total > 0 ? Math.round((votes.yes / total) * 100) : 0;
-            let noPct = total > 0 ? Math.round((votes.no / total) * 100) : 0;
-
-            document.getElementById('yes-percent').innerText = yesPct + '%';
-            document.getElementById('no-percent').innerText = noPct + '%';
-            document.getElementById('yes-bar').style.width = yesPct + '%';
-            document.getElementById('no-bar').style.width = noPct + '%';
-            document.getElementById('total-votes').innerText = total + ' total votes';
+        function toggleLanguage() {
+            playSound();
+            setLanguage(currentLang === 'en' ? 'bn' : 'en');
         }
 
-        function vote(type) {
-            if (localStorage.getItem('waziha_infinite_universe_voted')) {
-                let msg = document.getElementById('vote-message');
-                msg.style.display = 'block';
-                msg.innerText = '⚠️ Your vote has already been registered in this system!';
+        setLanguage(currentLang);
+
+        // 3. Web Audio API Sound FX
+        function playSound() {
+            try {
+                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioCtx.createOscillator();
+                const gainNode = audioCtx.createGain();
+                
+                oscillator.type = 'sine';
+                oscillator.frequency.setValueAtTime(580, audioCtx.currentTime);
+                oscillator.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.08);
+                
+                gainNode.gain.setValueAtTime(0.05, audioCtx.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+                
+                oscillator.start();
+                oscillator.stop(audioCtx.currentTime + 0.08);
+            } catch(e) {}
+        }
+
+        // 4. Dark / Light Mode Switcher
+        const themeToggleBtn = document.getElementById('themeToggle');
+        function toggleTheme() {
+            playSound();
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            if (currentTheme === 'light') {
+                document.documentElement.removeAttribute('data-theme');
+                themeToggleBtn.innerText = '🌙';
+                localStorage.setItem('waziha_theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                themeToggleBtn.innerText = '☀️';
+                localStorage.setItem('waziha_theme', 'light');
+            }
+        }
+
+        if (localStorage.getItem('waziha_theme') === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            themeToggleBtn.innerText = '☀️';
+        }
+
+        // 5. Bangladesh Regional Live Visitor Counter
+        function updateLiveVisitors() {
+            let baseCount = 285; // BD Region Base Traffic
+            let currentLive = baseCount + Math.floor(Math.random() * 20) - 10;
+            let visitorText = currentLang === 'bn' ? `লাইভ ভিজিটর (বাংলাদেশ): ${currentLive} জন সক্রিয়` : `Live Visitors (BD): ${currentLive} active now`;
+            document.getElementById('visitor-count').innerText = visitorText;
+        }
+        updateLiveVisitors();
+        setInterval(updateLiveVisitors, 5000);
+
+        // 6. Secure Voting System
+        let voteData = JSON.parse(localStorage.getItem('waziha_pro_vote_data')) || { yes: 19850, no: 150 };
+
+        function updateUI() {
+            let total = voteData.yes + voteData.no;
+            let yesPercent = total > 0 ? Math.round((voteData.yes / total) * 100) : 100;
+            
+            document.getElementById('yes-pct').innerText = yesPercent + '%';
+            document.getElementById('p-bar').style.width = yesPercent + '%';
+            document.getElementById('total-display').innerText = '🔥 Total Likes & Votes: ' + total.toLocaleString();
+        }
+
+        function castVote(type) {
+            playSound();
+            if(localStorage.getItem('waziha_pro_voted')) {
+                alert(currentLang === 'bn' ? '⚠️ এই সিস্টেমে আপনার ভোট ইতিমধ্যে রেজিস্টার করা হয়েছে!' : '⚠️ Your vote has already been registered securely in this system!');
                 return;
             }
+            if(type === 'yes') voteData.yes++;
+            if(type === 'no') voteData.no++;
 
-            if (type === 'yes') votes.yes++;
-            if (type === 'no') votes.no++;
-
-            localStorage.setItem('waziha_infinite_universe_voted', 'true');
-            localStorage.setItem('waziha_infinite_universe_votes', JSON.stringify(votes));
-
-            updateResults();
-
-            let msg = document.getElementById('vote-message');
-            msg.style.display = 'block';
-            msg.innerText = '❤️ Thank you for experiencing the Infinite Universe!';
+            localStorage.setItem('waziha_pro_voted', 'true');
+            localStorage.setItem('waziha_pro_vote_data', JSON.stringify(voteData));
+            updateUI();
+            alert(currentLang === 'bn' ? '❤️ আপনার চমৎকার মতামতের জন্য ধন্যবাদ!' : '❤️ Thank you for your amazing feedback!');
         }
 
-        // Initialize survey matrix on load
-        updateResults();
+        updateUI();
+
+        // 7. AI Chatbot Interactive System Logic
+        function toggleChatWindow() {
+            playSound();
+            let box = document.getElementById('aiChatBox');
+            box.style.display = box.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function handleChatKey(e) {
+            if (e.key === 'Enter') sendAiMessage();
+        }
+
+        function sendAiMessage() {
+            let inputField = document.getElementById('aiUserInput');
+            let text = inputField.value.trim();
+            if (!text) return;
+
+            playSound();
+            let msgContainer = document.getElementById('aiMessages');
+
+            // Append user message
+            let userDiv = document.createElement('div');
+            userDiv.className = 'ai-msg user';
+            userDiv.innerText = text;
+            msgContainer.appendChild(userDiv);
+            inputField.value = '';
+            msgContainer.scrollTop = msgContainer.scrollHeight;
+
+            // Generate AI response as Waziha Rahman
+            setTimeout(() => {
+                let botDiv = document.createElement('div');
+                botDiv.className = 'ai-msg bot';
+                
+                let lowerText = text.toLowerCase();
+                if (currentLang === 'bn') {
+                    if (lowerText.includes('কেমন') || lowerText.includes('how')) {
+                        botDiv.innerText = "আলহামদুলিল্লাহ, আমি অনেক ভালো আছি! বলুন, আপনাকে কীভাবে সাহায্য করতে পারি?";
+                    } else if (lowerText.includes('কে তৈরি') || lowerText.includes('creator') || lowerText.includes('pial')) {
+                        botDiv.innerText = "এই ওয়েবসাইটটি ডেভেলপার MD. Peyal অত্যন্ত যত্নের সাথে তৈরি করেছেন!";
+                    } else {
+                        botDiv.innerText = `হুম,আপনার কথাটি আমি বুঝতে পেরেছি ("${text}")। ওয়াজিহা রহমানের এই পোর্টাল সম্পর্কে আরও কিছু জানতে চাইলে আমাকে
+                     বলুন!`;
+                    }
+                } else {
+                    if (lowerText.includes('how are you') || lowerText.includes('hello')) {
+                        botDiv.innerText = "I am doing great, thank you! Tell us how I can assist you today.";
+                    } else if (lowerText.includes('created') || lowerText.includes('pial') || lowerText.includes('who')) {
+                        botDiv.innerText = "This website was created by MD. Peyal in Bangladesh!";
+                    } else {
+                        botDiv.innerText = `Thanks for sharing ("${text}"). Tell us if you need any more details about Waziha Rahman's official website!`;
+                    }
+                }
+
+                msgContainer.appendChild(botDiv);
+                msgContainer.scrollTop = msgContainer.scrollHeight;
+            }, 600);
+        }
     </script>
 </body>
-    </html>
-                
+</html>
+
