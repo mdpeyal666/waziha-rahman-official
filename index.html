@@ -1,45 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" id="htmlRoot" data-country="BD">
+<html lang="en" data-theme="dark" id="htmlRoot">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waziha Rahman | Ultimate Pro Masterpiece</title>
-    <meta name="description" content="Waziha Rahman Official Website — Created by MD. Peyal in Bangladesh.">
     
-    <!-- Geo & Country Meta (Bangladesh) -->
-    <meta name="geo.region" content="BD">
-    <meta name="geo.country" content="Bangladesh">
-    
-    <!-- PWA Manifest Link -->
-    <link rel="manifest" href="data:application/manifest+json;charset=utf-8,%7B%22name%22%3A%22Waziha%20Rahman%20Masterpiece%22%2C%22short_name%22%3A%22WazihaApp%22%2C%22start_url%22%3A%22.%22%2C%22display%22%3A%22standalone%22%2C%22background_color%22%3A%22%23020208%22%2C%22theme_color%22%3A%22%2300f2fe%22%2C%22icons%22%3A%5B%7B%22src%22%3A%221000001529_2.jpg%22%2C%22sizes%22%3A%22512x512%22%2C%22type%22%3A%22image%2Fjpeg%22%7D%5D%7D">
-    <meta name="theme-color" content="#00f2fe">
-
-    <!-- Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-        <style>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
         :root {
-            --bg-color: #020208;
-            --glass-bg: rgba(10, 10, 24, 0.82);
-            --neon-cyan: #00f2fe;
-            --neon-pink: #ff007f;
-            --neon-gold: #ffd700;
-            --text-main: #ffffff;
-            --text-muted: #a1a1aa;
-            --border-glow: rgba(0, 242, 254, 0.35);
-            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --bg-color: #0b0f19;
+            --glass-bg: rgba(17, 24, 39, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --accent-cyan: #38bdf8;
+            --accent-pink: #ec4899;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --transition: all 0.35s ease;
         }
 
         [data-theme="light"] {
-            --bg-color: #f0f2f5;
+            --bg-color: #f1f5f9;
             --glass-bg: rgba(255, 255, 255, 0.85);
-            --neon-cyan: #0072ff;
-            --neon-pink: #d90368;
-            --neon-gold: #b38f00;
-            --text-main: #111827;
-            --text-muted: #4b5563;
-            --border-glow: rgba(0, 114, 255, 0.3);
+            --glass-border: rgba(0, 0, 0, 0.08);
+            --accent-cyan: #0284c7;
+            --accent-pink: #db2777;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -50,456 +40,342 @@
             color: var(--text-main);
             overflow-x: hidden;
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
             transition: background-color 0.4s ease, color 0.4s ease;
         }
-                    .universe-bg {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            pointer-events: none; z-index: -1;
-            background: radial-gradient(circle at 50% 15%, rgba(15, 10, 35, 0.8) 0%, var(--bg-color) 85%);
-        }
-        .glowing-orb {
-            position: absolute; width: 450px; height: 450px; border-radius: 50%;
-            filter: blur(140px); opacity: 0.22; will-change: transform;
-            animation: floatOrb 18s infinite alternate ease-in-out;
-        }
-        .orb-1 { background: var(--neon-cyan); top: -120px; left: -120px; }
-        .orb-2 { background: var(--neon-pink); bottom: -120px; right: -120px; animation-delay: -6s; }
-        @keyframes floatOrb {
-            0% { transform: translateY(0) scale(1); }
-            100% { transform: translateY(35px) scale(1.1); }
-            }
-                        .navbar {
+
+        /* Navbar */
+        .navbar {
             position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            background: var(--glass-bg); backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding: 14px 6%;
+            background: var(--glass-bg); backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 14px 6%;
         }
         .nav-container {
             max-width: 1200px; margin: 0 auto;
             display: flex; justify-content: space-between; align-items: center;
         }
         .logo {
-            font-family: 'Orbitron', sans-serif; font-size: 15px; font-weight: 800;
-            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+            font-size: 16px; font-weight: 800; letter-spacing: 0.5px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-        .nav-right { display: flex; align-items: center; gap: 15px; }
-        .nav-menu { display: flex; gap: 18px; list-style: none; }
+        .nav-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .nav-menu { display: flex; gap: 16px; list-style: none; }
         .nav-menu a {
-            color: var(--text-muted); text-decoration: none; font-size: 12px; font-weight: 600;
-            transition: var(--transition-smooth);
+            color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 600;
+            transition: var(--transition);
         }
-        .nav-menu a:hover { color: var(--neon-cyan); text-shadow: 0 0 12px var(--neon-cyan); }
+        .nav-menu a:hover { color: var(--accent-cyan); }
 
-        .tool-btns { display: flex; gap: 8px; align-items: center; }
-        .control-btn {
-            background: rgba(255, 255, 255, 0.1); border: 1px solid var(--border-glow);
-            color: var(--text-main); padding: 5px 10px; border-radius: 15px;
-            cursor: pointer; font-size: 11px; font-weight: 700; transition: var(--transition-smooth);
+        .control-group { display: flex; gap: 6px; align-items: center; }
+        .btn-ctrl {
+            background: var(--glass-border); border: 1px solid var(--glass-border);
+            color: var(--text-main); padding: 5px 10px; border-radius: 20px;
+            cursor: pointer; font-size: 11px; font-weight: 700; transition: var(--transition);
         }
-        .control-btn:hover { background: var(--neon-cyan); color: #020208; transform: scale(1.05); }
+        .btn-ctrl:hover { background: var(--accent-cyan); color: #fff; transform: translateY(-1px); }
+        
+        .btn-install {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+            color: #fff; border: none; padding: 5px 12px; border-radius: 20px;
+            cursor: pointer; font-size: 11px; font-weight: 700; transition: var(--transition);
+        }
+        .btn-install:hover { transform: scale(1.05); }
 
-        .install-app-btn {
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-            color: white; border: none; padding: 5px 12px; border-radius: 15px;
-            cursor: pointer; font-size: 11px; font-weight: 700; transition: var(--transition-smooth);
-            display: none; box-shadow: 0 0 10px rgba(34, 197, 94, 0.4);
+        /* Hero Section with Cover Photo */
+        .hero {
+            position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            text-align: center; padding: 130px 20px 60px; overflow: hidden;
         }
-        .install-app-btn:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(34, 197, 94, 0.7); }
+        .hero-cover-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: url('1000001529_2.jpg') no-repeat center center/cover;
+            filter: blur(16px) brightness(0.35); transform: scale(1.1); z-index: -1;
+        }
+        .hero-content { max-width: 650px; position: relative; z-index: 1; }
+        
+        .profile-container {
+            width: 150px; height: 150px; margin: 0 auto 20px;
+            border-radius: 50%; padding: 4px;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .profile-pic {
+            width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
+            border: 3px solid var(--bg-color);
+        }
+        .creator-tag {
+            display: inline-block; padding: 6px 16px; background: var(--glass-border);
+            border-radius: 30px; font-size: 12px; font-weight: 600; color: var(--accent-cyan);
+            margin-bottom: 14px; border: 1px solid var(--glass-border);
+        }
+        .hero h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 10px; }
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero p { color: var(--text-muted); font-size: 14px; margin-bottom: 25px; }
+
+        .btn-main {
+            padding: 10px 24px; border-radius: 12px; font-size: 13px; font-weight: 700;
+            text-decoration: none; transition: var(--transition); cursor: pointer; border: none;
+            display: inline-block; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink)); color: #fff;
+        }
+        .btn-main:hover { transform: translateY(-2px); opacity: 0.95; }
+
+        /* Sections General */
+        .section { max-width: 1000px; margin: 0 auto; padding: 50px 20px; }
+        .glass-card {
+            background: var(--glass-bg); border: 1px solid var(--glass-border);
+            backdrop-filter: blur(16px); border-radius: 20px; padding: 35px 20px; text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .section-title { font-size: 20px; font-weight: 800; margin-bottom: 12px; }
+
+        /* Horizontal Carousel (ডানে-বামে স্ক্রল করার সিস্টেম) */
+        .gallery-container { position: relative; margin-top: 25px; }
+        .gallery-slider {
+            display: flex; gap: 20px; overflow-x: auto; scroll-behavior: smooth;
+            padding-bottom: 15px; scrollbar-width: none;
+        }
+        .gallery-slider::-webkit-scrollbar { display: none; }
+        
+        .media-box {
+            min-width: 300px; flex: 0 0 300px;
+            background: var(--glass-bg); border: 1px solid var(--glass-border);
+            border-radius: 16px; padding: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .gallery-video, .gallery-image { 
+            width: 100%; border-radius: 10px; display: block; background: #000; height: 200px; object-fit: cover; 
+        }
+        
+        .slider-nav-btns {
+            display: flex; justify-content: center; gap: 15px; margin-top: 15px;
+        }
+        .slider-btn {
+            background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--text-main);
+            padding: 8px 16px; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 12px;
+            transition: var(--transition);
+        }
+        .slider-btn:hover { background: var(--accent-cyan); color: #fff; }
+
+        /* Voting System Section */
+        .voting-section {
+            max-width: 650px; margin: 20px auto 40px; padding: 25px 20px;
+            background: var(--glass-bg); border: 1px solid var(--glass-border);
+            backdrop-filter: blur(16px); border-radius: 20px; text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .vote-btn-group { display: flex; gap: 12px; justify-content: center; margin: 15px 0; }
+        .vote-btn {
+            padding: 8px 20px; border-radius: 10px; font-weight: 700; font-size: 12px;
+            cursor: pointer; border: none; transition: var(--transition);
+        }
+        .vote-btn.love { background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink)); color: #fff; }
+        .vote-btn.good { background: var(--glass-border); border: 1px solid var(--glass-border); color: var(--text-main); }
+        .vote-btn:hover { transform: scale(1.05); }
+
+        /* AI Chatbot Floating Widget */
+        .ai-chat-bubble {
+            position: fixed; bottom: 25px; right: 25px; z-index: 9999;
+            background: var(--glass-bg); border: 1px solid var(--glass-border);
+            backdrop-filter: blur(16px); padding: 8px 16px; border-radius: 30px;
+            display: flex; align-items: center; gap: 10px; cursor: pointer;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: var(--transition);
+        }
+        .ai-chat-bubble:hover { transform: scale(1.05); border-color: var(--accent-cyan); }
+        .ai-bubble-avatar { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--accent-cyan); }
+        .ai-bubble-text { font-size: 13px; font-weight: 700; color: var(--text-main); }
+
+        .ai-chat-box {
+            position: fixed; bottom: 95px; right: 25px; width: 350px; height: 450px;
+            background: var(--glass-bg); backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border); border-radius: 20px;
+            z-index: 9999; display: none; flex-direction: column; overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+        .ai-chat-header {
+            background: var(--glass-border); padding: 12px 16px;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .ai-header-left { display: flex; align-items: center; gap: 10px; }
+        .ai-header-avatar { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 1px solid var(--accent-cyan); }
+        .ai-chat-title { font-size: 13px; font-weight: 700; color: var(--text-main); }
+        .ai-close-btn { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 16px; }
+
+        .ai-chat-messages { flex: 1; padding: 14px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 12px; }
+        .ai-msg { padding: 9px 13px; border-radius: 12px; max-width: 82%; line-height: 1.5; }
+        .ai-msg.bot { background: var(--glass-border); align-self: flex-start; color: var(--text-main); }
+        .ai-msg.user { background: var(--accent-cyan); color: #fff; align-self: flex-end; font-weight: 700; }
+
+        .ai-chat-input-area { padding: 10px; display: flex; gap: 8px; border-top: 1px solid var(--glass-border); }
+        .ai-input { flex: 1; padding: 9px 12px; border-radius: 10px; border: 1px solid var(--glass-border); background: transparent; color: var(--text-main); font-size: 12px; outline: none; }
+        .ai-send-btn { padding: 9px 16px; border-radius: 10px; background: var(--accent-cyan); color: #fff; border: none; font-weight: 700; cursor: pointer; font-size: 12px; }
+
+        footer { text-align: center; padding: 30px; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--glass-border); }
     </style>
 </head>
-    <body>
-    <div class="universe-bg" aria-hidden="true">
-        <div class="glowing-orb orb-1"></div>
-        <div class="glowing-orb orb-2"></div>
-    </div>
+<body>
 
     <!-- NAVBAR -->
-    <nav class="navbar" aria-label="Main Navigation">
+    <nav class="navbar">
         <div class="nav-container">
             <div class="logo">Waziha Rahman</div>
             <div class="nav-right">
                 <ul class="nav-menu">
-                    <li><a href="#home" onclick="playSound()" data-key="nav_home">Home</a></li>
-                    <li><a href="#about" onclick="playSound()" data-key="nav_about">About</a></li>
-                    <li><a href="#gallery" onclick="playSound()" data-key="nav_gallery">Gallery</a></li>
-                    <li><a href="#contact" onclick="playSound()" data-key="nav_contact">Contact</a></li>
+                    <li><a href="#home" data-key="nav_home">Home</a></li>
+                    <li><a href="#about" data-key="nav_about">About</a></li>
+                    <li><a href="#video-gallery" data-key="nav_videos">Videos</a></li>
+                    <li><a href="#photo-gallery" data-key="nav_photos">Photos</a></li>
+                    <li><a href="#contact" data-key="nav_contact">Contact</a></li>
                 </ul>
-                <div class="tool-btns">
-                    <button class="install-app-btn" id="installBtn" onclick="installApp()" data-key="btn_install">Install App</button>
-                    <button class="control-btn" id="langToggle" onclick="toggleLanguage()">বাংলা</button>
-                    <button class="control-btn" id="themeToggle" onclick="toggleTheme()">🌙</button>
+                <div class="control-group">
+                    <button class="btn-install" id="installAppBtn" onclick="installApp()" data-key="btn_install">📱 Install App</button>
+                    <button class="btn-ctrl" id="langToggle" onclick="toggleLanguage()">বাংলা</button>
+                    <button class="btn-ctrl" id="themeToggle" onclick="toggleTheme()">🌙</button>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <header class="hero" id="home" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 130px 20px 60px;">
-        <div class="hero-content" style="max-width: 650px;">
-            <div class="profile-container" style="position: relative; width: 150px; height: 150px; margin: 0 auto 20px;">
-                <img src="1000001529_2.jpg" class="profile-pic" alt="Waziha Rahman Profile Picture" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid var(--neon-cyan); box-shadow: 0 0 25px rgba(0, 242, 254, 0.4);" loading="lazy">
-                <div class="verified-badge" style="position: absolute; bottom: 4px; right: 4px; background: #2563eb; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; border: 2px solid var(--bg-color);">✓</div>
+    <header class="hero" id="home">
+        <div class="hero-cover-bg"></div>
+        <div class="hero-content">
+            <div class="profile-container">
+                <img src="1000001529_2.jpg" class="profile-pic" alt="Waziha Rahman">
             </div>
-
-            <div>
-                <span class="creator-tag" style="display: inline-block; padding: 5px 14px; background: rgba(0, 242, 254, 0.08); border: 1px solid var(--border-glow); border-radius: 20px; font-size: 11px; font-weight: 600; color: var(--neon-cyan); margin-bottom: 14px;">Created by MD. Pial in Bangladesh</span>
-            </div>
-
-            <h1 style="font-family: 'Orbitron', sans-serif; font-size: clamp(26px, 4.5vw, 42px); font-weight: 800; margin-bottom: 12px;">Waziha <span class="gradient-title" style="background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Rahman</span></h1>
-            <p data-key="hero_desc" style="color: var(--text-muted); font-size: 13px; max-width: 480px; margin: 0 auto 25px;">The ultimate professional master creation engineered with absolute precision in Bangladesh.</p>
-
-            <div class="btn-group" style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-                <a href="#gallery" class="btn btn-primary" onclick="playSound()" data-key="btn_explore" style="padding: 9px 22px; border-radius: 10px; font-size: 12px; font-weight: 600; text-decoration: none; background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink)); color: #020208;">Explore Media</a>
-                <a href="https://www.facebook.com/profile.php?id=61588949437523" target="_blank" rel="noopener noreferrer" class="btn btn-primary" onclick="playSound()" data-key="btn_fb" style="padding: 9px 22px; border-radius: 10px; font-size: 12px; font-weight: 600; text-decoration: none; background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink)); color: #020208;">Official FB</a>
+            <span class="creator-tag">Created by Md Peyal in Bangladesh</span>
+            <h1>Waziha <span>Rahman</span></h1>
+            <p data-key="hero_desc">The ultimate professional master creation engineered with absolute precision in Bangladesh.</p>
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <a href="#video-gallery" class="btn-main" data-key="btn_explore">Explore Media</a>
             </div>
         </div>
-                    </header>
-            <!-- ABOUT SECTION -->
-    <section class="section" id="about" style="max-width: 1050px; margin: 0 auto; padding: 70px 20px;">
-        <div class="glass-card" style="background: var(--glass-bg); border: 1px solid rgba(255, 255, 255, 0.08); backdrop-filter: blur(20px); border-radius: 18px; padding: 28px; text-align: center;">
-            <h2 class="section-title" data-key="about_title" style="font-family: 'Orbitron', sans-serif; font-size: 18px; margin-bottom: 12px;">About Platform</h2>
-            <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 10px;" data-key="about_desc">Welcome to the official enterprise-grade digital space of Waziha Rahman, hosted securely in Bangladesh.</p>
-            <div class="live-visitor-badge" style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); border-radius: 20px; font-size: 12px; font-weight: 600; color: #22c55e; margin-top: 15px;">
-                <span class="live-dot" style="width: 8px; height: 8px; background-color: #22c55e; border-radius: 50%;"></span>
-                <span id="visitor-count">Live Visitors (BD): Loading...</span>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section class="section" id="about">
+        <div class="glass-card">
+            <h2 class="section-title" data-key="about_title">About Platform</h2>
+            <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 15px;" data-key="about_desc">Welcome to the official enterprise-grade digital space of Waziha Rahman, hosted securely in Bangladesh.</p>
+            <div style="font-size: 12px; color: #22c55e; font-weight: 600;" id="visitor-count">Live Visitors (BD): Loading...</div>
+        </div>
+    </section>
+
+    <!-- VIDEO GALLERY SECTION -->
+    <section class="section" id="video-gallery">
+        <h2 class="section-title" style="text-align: center;" data-key="video_gallery_title">Featured Video Hub</h2>
+        <div class="gallery-container">
+            <div class="gallery-slider" id="videoSlider">
+                <div class="media-box">
+                    <video class="gallery-video" controls preload="metadata" playsinline>
+                        <source src="Facebook_1783604846656(360p).mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="media-box">
+                    <video class="gallery-video" controls preload="metadata" playsinline>
+                        <source src="Facebook_1783352252816(360p).mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="media-box">
+                    <video class="gallery-video" controls preload="metadata" playsinline>
+                        <source src="Facebook_1783604846656(360p).mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="slider-nav-btns">
+                <button class="slider-btn" onclick="slideMedia('videoSlider', 'left')">◀ Prev / More</button>
+                <button class="slider-btn" onclick="slideMedia('videoSlider', 'right')">Next / More ▶</button>
             </div>
         </div>
     </section>
-            <!-- GALLERY SECTION -->
-    <section class="section" id="gallery" style="max-width: 1050px; margin: 0 auto; padding: 70px 20px;">
-        <h2 class="section-title" data-key="gallery_title" style="font-family: 'Orbitron', sans-serif; font-size: 18px; margin-bottom: 12px; text-align: center;">Featured Media Hub</h2>
-        <div class="gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 25px;">
-            <div class="video-box" style="background: var(--glass-bg); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 8px;">
-                <video class="gallery-video" controls preload="metadata" playsinline style="width: 100%; border-radius: 10px; display: block; background: #000;">
-                    <source src="Facebook_1783604846656(360p).mp4" type="video/mp4">
-                </video>
+
+    <!-- PHOTO GALLERY SECTION -->
+    <section class="section" id="photo-gallery">
+        <h2 class="section-title" style="text-align: center;" data-key="photo_gallery_title">Featured Photo Gallery</h2>
+        <div class="gallery-container">
+            <div class="gallery-slider" id="photoSlider">
+                <div class="media-box">
+                    <img src="1000001529_2.jpg" class="gallery-image" alt="Photo 1">
+                </div>
+                <div class="media-box">
+                    <img src="1000001529_2.jpg" class="gallery-image" alt="Photo 2">
+                </div>
+                <div class="media-box">
+                    <img src="1000001529_2.jpg" class="gallery-image" alt="Photo 3">
+                </div>
             </div>
-            <div class="video-box" style="background: var(--glass-bg); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 8px;">
-                <video class="gallery-video" controls preload="metadata" playsinline style="width: 100%; border-radius: 10px; display: block; background: #000;">
-                    <source src="Facebook_1783352252816(360p).mp4" type="video/mp4">
-                </video>
+            <div class="slider-nav-btns">
+                <button class="slider-btn" onclick="slideMedia('photoSlider', 'left')">◀ Prev / More</button>
+                <button class="slider-btn" onclick="slideMedia('photoSlider', 'right')">Next / More ▶</button>
             </div>
         </div>
     </section>
-            <!-- CONTACT SECTION -->
-    <section class="section" id="contact" style="max-width: 1050px; margin: 0 auto; padding: 70px 20px;">
-        <div class="glass-card" style="background: var(--glass-bg); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 18px; padding: 35px 20px; text-align: center;">
-            <h2 class="section-title" data-key="contact_title" style="font-family: 'Orbitron', sans-serif; font-size: 18px; margin-bottom: 12px;">Get In Touch</h2>
-            <p style="color: var(--text-muted); font-size: 12px; margin-bottom: 15px;" data-key="contact_desc">Connect directly through authenticated official portals in Bangladesh.</p>
-            <div class="social-btns" style="display: flex; justify-content: center; gap: 12px; margin-top: 16px;">
-                <a href="https://www.facebook.com/profile.php?id=61588949437523" target="_blank" rel="noopener noreferrer" class="btn" onclick="playSound()" style="padding: 8px 18px; border-radius: 8px; background: #1877f2; color: white; text-decoration: none; font-size: 12px;">Facebook</a>
-                <a href="https://wa.me/8801782088426" target="_blank" rel="noopener noreferrer" class="btn" onclick="playSound()" style="padding: 8px 18px; border-radius: 8px; background: #25d366; color: white; text-decoration: none; font-size: 12px;">WhatsApp</a>
-            </div>
-        </div>
-    </section>
-            <!-- VOTING SECTION (Over 20,000+ Likes) -->
-    <section class="voting-section" style="max-width: 650px; margin: 30px auto 70px; padding: 30px 22px; background: var(--glass-bg); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; text-align: center;">
-        <h3 data-key="vote_title" style="font-family: 'Orbitron', sans-serif; font-size: 16px; margin-bottom: 6px;">Rate This Masterpiece</h3>
-        <p data-key="vote_desc" style="color: var(--text-muted); font-size: 12px; margin-bottom: 20px;">Give your honest feedback on this creation.</p>
 
-        <div class="vote-btn-group" style="display: flex; gap: 12px; justify-content: center; margin-bottom: 20px;">
-            <button class="vote-btn" onclick="castVote('yes')" data-key="vote_yes" style="padding: 9px 20px; border-radius: 10px; font-weight: 600; font-size: 12px; cursor: pointer; border: none; background: linear-gradient(135deg, var(--neon-cyan), #0072ff); color: #020208;">❤️ Love It</button>
-            <button class="vote-btn" onclick="castVote('no')" data-key="vote_no" style="padding: 9px 20px; border-radius: 10px; font-weight: 600; font-size: 12px; cursor: pointer; border: 1px solid rgba(255,255,255,0.12); background: rgba(255, 255, 255, 0.08); color: var(--text-main);">👍 Good</button>
+    <!-- VOTING SYSTEM SECTION -->
+    <section class="voting-section">
+        <h3 class="section-title" data-key="vote_title" style="font-size: 16px;">Rate This Masterpiece</h3>
+        <p style="color: var(--text-muted); font-size: 12px;" data-key="vote_desc">Give your honest feedback on this creation.</p>
+        <div class="vote-btn-group">
+            <button class="vote-btn love" onclick="castVote('yes')" data-key="vote_yes">❤️ Love It</button>
+            <button class="vote-btn good" onclick="castVote('no')" data-key="vote_no">👍 Good</button>
         </div>
-
-        <div class="vote-stats" style="text-align: left; background: rgba(0, 0, 0, 0.15); padding: 14px; border-radius: 10px; font-size: 12px;">
-            <div class="stat-row" style="display: flex; justify-content: space-between; margin-bottom: 6px; font-weight: 600;">
+        <div style="text-align: left; background: rgba(0,0,0,0.15); padding: 12px; border-radius: 10px; font-size: 12px; margin-top: 15px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px; font-weight: 700;">
                 <span data-key="vote_approval">Approval Rating</span>
                 <span id="yes-pct">99%</span>
             </div>
-            <div class="progress-bar" style="width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; margin-bottom: 10px;">
-                <div class="progress-fill" id="p-bar" style="height: 100%; background: linear-gradient(90deg, var(--neon-cyan), var(--neon-pink)); width: 98%;"></div>
+            <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; margin-bottom: 8px;">
+                <div id="p-bar" style="height: 100%; background: linear-gradient(90deg, var(--accent-cyan), var(--accent-pink)); width: 98%;"></div>
             </div>
-            <div class="total-likes" id="total-display" style="text-align: center; color: var(--neon-gold); font-weight: 700; font-size: 12px;">🔥 Total Likes & Votes: 20,000</div>
+            <div id="total-display" style="text-align: center; color: var(--accent-cyan); font-weight: 700;">🔥 Total Likes & Votes: 20,000</div>
         </div>
     </section>
 
-    <!-- AI CHATBOT FLOATING WIDGET (Waziha Rahman | Tell Us / আমাদেরকে বলুন) -->
-    <style>
-        .ai-chat-bubble {
-            position: fixed; bottom: 25px; right: 25px; z-index: 9999;
-            background: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
-            color: #020208; width: 55px; height: 55px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            cursor: pointer; box-shadow: 0 0 25px rgba(0, 242, 254, 0.5);
-            font-size: 22px; transition: var(--transition-smooth);
-        }
-        .ai-chat-bubble:hover { transform: scale(1.1); }
-        
-        .ai-chat-box {
-            position: fixed; bottom: 95px; right: 25px; width: 340px; height: 440px;
-            background: var(--glass-bg); backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 18px;
-            z-index: 9999; display: none; flex-direction: column; overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-        }
-        .ai-chat-header {
-            background: rgba(0, 0, 0, 0.3); padding: 12px 15px;
-            display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        .ai-chat-title { font-family: 'Orbitron', sans-serif; font-size: 12px; font-weight: 700; color: var(--neon-cyan); }
-        .ai-close-btn { background: none; border: none; color: var(--text-main); cursor: pointer; font-size: 16px; }
-        
-        .ai-chat-messages { flex: 1; padding: 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 12px; }
-        .ai-msg { padding: 8px 12px; border-radius: 10px; max-width: 80%; line-height: 1.4; }
-        .ai-msg.bot { background: rgba(0, 242, 254, 0.1); border: 1px solid var(--border-glow); align-self: flex-start; color: var(--text-main); }
-        .ai-msg.user { background: linear-gradient(135deg, var(--neon-cyan), #0072ff); color: #020208; align-self: flex-end; font-weight: 600; }
-        
-        .ai-chat-input-area { padding: 10px; display: flex; gap: 8px; border-top: 1px solid rgba(255, 255, 255, 0.08); background: rgba(0,0,0,0.2); }
-        .ai-input { flex: 1; padding: 8px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: var(--text-main); font-size: 12px; outline: none; }
-        .ai-send-btn { padding: 8px 14px; border-radius: 8px; background: var(--neon-cyan); color: #020208; border: none; font-weight: 700; cursor: pointer; font-size: 12px; }
-    </style>
+    <!-- CONTACT SECTION -->
+    <section class="section" id="contact">
+        <div class="glass-card">
+            <h2 class="section-title" data-key="contact_title">Get In Touch</h2>
+            <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 20px;" data-key="contact_desc">Connect directly through authenticated official portals in Bangladesh.</p>
+            <div style="display: flex; justify-content: center; gap: 12px;">
+                <a href="https://www.facebook.com/profile.php?id=61588949437523" target="_blank" rel="noopener noreferrer" class="btn-main" style="background: #1877f2;">Facebook</a>
+                <a href="https://wa.me/8801782088426" target="_blank" rel="noopener noreferrer" class="btn-main" style="background: #25d366;">WhatsApp</a>
+            </div>
+        </div>
+    </section>
 
-    <div class="ai-chat-bubble" onclick="toggleChatWindow()" title="Chat with Waziha Rahman">💬</div>
+    <!-- AI CHATBOT FLOATING WIDGET -->
+    <div class="ai-chat-bubble" onclick="toggleChatWindow()">
+        <img src="1000001529_2.jpg" class="ai-bubble-avatar" alt="Avatar">
+        <span class="ai-bubble-text" id="bubbleTitle">Tell Us (ওয়াজিয়া রহমান)</span>
+    </div>
 
     <div class="ai-chat-box" id="aiChatBox">
         <div class="ai-chat-header">
-            <span class="ai-chat-title" id="aiHeaderTitle">Waziha Rahman | Tell Us</span>
+            <div class="ai-header-left">
+                <img src="1000001529_2.jpg" class="ai-header-avatar" alt="Avatar">
+                <span class="ai-chat-title" id="aiHeaderTitle">Tell Us (ওয়াজিয়া রহমান)</span>
+            </div>
             <button class="ai-close-btn" onclick="toggleChatWindow()">✕</button>
         </div>
         <div class="ai-chat-messages" id="aiMessages">
-            <div class="ai-msg bot" id="aiWelcomeMsg">Hello! I am Waziha Rahman. Tell us what you want to know or share your thoughts!</div>
+            <div class="ai-msg bot" id="aiWelcomeMsg">Hello mama! How can I help you today? 😊</div>
         </div>
         <div class="ai-chat-input-area">
-            <input type="text" class="ai-input" id="aiUserInput" placeholder="Type a message..." onkeypress="handleChatKey(event)">
-            <button class="ai-send-btn" onclick="sendAiMessage()" data-key="chat_send">Send</button>
+            <input type="text" class="ai-input" id="aiUserInput" placeholder="Type something here..." onkeypress="handleChatKey(event)">
+            <button class="ai-send-btn" onclick="sendAiMessage()" id="chatSendBtn">Send</button>
         </div>
     </div>
 
-    <footer style="text-align: center; padding: 25px; font-size: 11px; color: var(--text-muted); border-top: 1px solid rgba(255, 255, 255, 0.05);">
-        <p>&copy; 2026 Waziha Rahman. Created by MD. Pial in Bangladesh. All Rights Reserved.</p>
+    <footer>
+        <p>&copy; 2026 Waziha Rahman. Created by Md Peyal in Bangladesh. All Rights Reserved.</p>
     </footer>
-        <script>
-        // 1. PWA App Install Handler
-        let deferredPrompt;
-        const installBtn = document.getElementById('installBtn');
 
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            installBtn.style.display = 'inline-block';
-        });
-
-        function installApp() {
-            playSound();
-            if (deferredPrompt) {
-                deferredPrompt.prompt();
-                deferredPrompt.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                        installBtn.style.display = 'none';
-                    }
-                    deferredPrompt = null;
-                });
-            } else {
-                alert(currentLang === 'bn' ? 'ℹ️ অ্যাপটি ইনস্টল করতে ব্রাউজারের থ্রি-ডট মেনু থেকে "Install app" এ ক্লিক করুন।' : 'ℹ️ To install, click "Install app" from your browser menu.');
-            }
-        }
-
-        // 2. Multi-Language Dictionary (Default: English, Toggle: Bengali)
+    <script>
+        // 1. Language Translation Dictionary (EN / BN)
         const langData = {
             en: {
-                nav_home: "Home", nav_about: "About", nav_gallery: "Gallery", nav_contact: "Contact",
-                btn_install: "Install App",
-                hero_desc: "The ultimate professional master creation engineered with absolute precision in Bangladesh.",
-                btn_explore: "Explore Media", btn_fb: "Official FB",
-                about_title: "About Platform", about_desc: "Welcome to the official enterprise-grade digital space of Waziha Rahman, hosted securely in Bangladesh.",
-                gallery_title: "Featured Media Hub",
-                contact_title: "Get In Touch", contact_desc: "Connect directly through authenticated official portals in Bangladesh.",
-                vote_title: "Rate This Masterpiece", vote_desc: "Give your honest feedback on this creation.",
-                vote_yes: "❤️ Love It", vote_no: "👍 Good", vote_approval: "Approval Rating",
-                chat_title: "Waziha Rahman | Tell Us",
-                chat_welcome: "Hello! I am Waziha Rahman. Tell us what you want to know or share your thoughts!",
-                chat_placeholder: "Type a message...",
-                chat_send: "Send"
-            },
-            bn: {
-                nav_home: "হোম", nav_about: "সম্পর্কে", nav_gallery: "গ্যালারি", nav_contact: "যোগাযোগ",
-                btn_install: "অ্যাপ ইনস্টল",
-                hero_desc: "বাংলাদেশে অত্যন্ত নিখুঁত নির্ভুলতা এবং অ্যাপ ইনস্টলেশন সাপোর্ট দিয়ে তৈরি চূড়ান্ত পেশাদার মাস্টারপিস।",
-                btn_explore: "মিডিয়া দেখুন", btn_fb: "অফিশিয়াল এফবি",
-                about_title: "প্ল্যাটফর্ম সম্পর্কে", about_desc: "ওয়াজিহা রহমানের অফিসিয়াল ডিজিটাল স্পেসে স্বাগতম, যা বাংলাদেশে অত্যন্ত নিরাপদে হোস্ট করা হয়েছে।",
-                gallery_title: "ফিচার্ড মিডিয়া হাব",
-                contact_title: "যোগাযোগ করুন", contact_desc: "বাংলাদেশের যাচাইকৃত অফিসিয়াল পোর্টালের মাধ্যমে সরাসরি সংযুক্ত হোন।",
-                vote_title: "এই মাস্টারপিসটি রেট করুন", vote_desc: "এই সৃষ্টি সম্পর্কে আপনার সৎ মতামত দিন।",
-                vote_yes: "❤️ অনেক ভালো লেগেছে", vote_no: "👍 ভালো", vote_approval: "অনুমোদন রেটিং",
-                chat_title: "ওয়াজিয়া রহমান | আমাদেরকে বলুন",
-                chat_welcome: "হ্যালো! আমি ওয়াজিয়া রহমান। আমাদের বলুন আপনার কী জানা দরকার বা আপনার মতামত শেয়ার করুন!",
-                chat_placeholder: "কিছু লিখুন...",
-                chat_send: "পাঠান"
-            }
-        };
-
-        // Default language set strictly to English as requested
-        let currentLang = localStorage.getItem('waziha_lang') || 'en';
-
-        function setLanguage(lang) {
-            currentLang = lang;
-            localStorage.setItem('waziha_lang', lang);
-            document.getElementById('langToggle').innerText = lang === 'en' ? 'বাংলা' : 'ENG';
-            document.documentElement.setAttribute('lang', lang);
-
-            document.querySelectorAll('[data-key]').forEach(el => {
-                let key = el.getAttribute('data-key');
-                if (langData[lang][key]) {
-                    el.innerText = langData[lang][key];
-                }
-            });
-
-            // Update specific chatbot dynamic elements
-            document.getElementById('aiHeaderTitle').innerText = langData[lang]['chat_title'];
-            document.getElementById('aiWelcomeMsg').innerText = langData[lang]['chat_welcome'];
-            document.getElementById('aiUserInput').placeholder = langData[lang]['chat_placeholder'];
-        }
-
-        function toggleLanguage() {
-            playSound();
-            setLanguage(currentLang === 'en' ? 'bn' : 'en');
-        }
-
-        setLanguage(currentLang);
-
-        // 3. Web Audio API Sound FX
-        function playSound() {
-            try {
-                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-                const oscillator = audioCtx.createOscillator();
-                const gainNode = audioCtx.createGain();
-                
-                oscillator.type = 'sine';
-                oscillator.frequency.setValueAtTime(580, audioCtx.currentTime);
-                oscillator.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.08);
-                
-                gainNode.gain.setValueAtTime(0.05, audioCtx.currentTime);
-                gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.08);
-                
-                oscillator.connect(gainNode);
-                gainNode.connect(audioCtx.destination);
-                
-                oscillator.start();
-                oscillator.stop(audioCtx.currentTime + 0.08);
-            } catch(e) {}
-        }
-
-        // 4. Dark / Light Mode Switcher
-        const themeToggleBtn = document.getElementById('themeToggle');
-        function toggleTheme() {
-            playSound();
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            if (currentTheme === 'light') {
-                document.documentElement.removeAttribute('data-theme');
-                themeToggleBtn.innerText = '🌙';
-                localStorage.setItem('waziha_theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-                themeToggleBtn.innerText = '☀️';
-                localStorage.setItem('waziha_theme', 'light');
-            }
-        }
-
-        if (localStorage.getItem('waziha_theme') === 'light') {
-            document.documentElement.setAttribute('data-theme', 'light');
-            themeToggleBtn.innerText = '☀️';
-        }
-
-        // 5. Bangladesh Regional Live Visitor Counter
-        function updateLiveVisitors() {
-            let baseCount = 285; // BD Region Base Traffic
-            let currentLive = baseCount + Math.floor(Math.random() * 20) - 10;
-            let visitorText = currentLang === 'bn' ? `লাইভ ভিজিটর (বাংলাদেশ): ${currentLive} জন সক্রিয়` : `Live Visitors (BD): ${currentLive} active now`;
-            document.getElementById('visitor-count').innerText = visitorText;
-        }
-        updateLiveVisitors();
-        setInterval(updateLiveVisitors, 5000);
-
-        // 6. Secure Voting System
-        let voteData = JSON.parse(localStorage.getItem('waziha_pro_vote_data')) || { yes: 19850, no: 150 };
-
-        function updateUI() {
-            let total = voteData.yes + voteData.no;
-            let yesPercent = total > 0 ? Math.round((voteData.yes / total) * 100) : 100;
-            
-            document.getElementById('yes-pct').innerText = yesPercent + '%';
-            document.getElementById('p-bar').style.width = yesPercent + '%';
-            document.getElementById('total-display').innerText = '🔥 Total Likes & Votes: ' + total.toLocaleString();
-        }
-
-        function castVote(type) {
-            playSound();
-            if(localStorage.getItem('waziha_pro_voted')) {
-                alert(currentLang === 'bn' ? '⚠️ এই সিস্টেমে আপনার ভোট ইতিমধ্যে রেজিস্টার করা হয়েছে!' : '⚠️ Your vote has already been registered securely in this system!');
-                return;
-            }
-            if(type === 'yes') voteData.yes++;
-            if(type === 'no') voteData.no++;
-
-            localStorage.setItem('waziha_pro_voted', 'true');
-            localStorage.setItem('waziha_pro_vote_data', JSON.stringify(voteData));
-            updateUI();
-            alert(currentLang === 'bn' ? '❤️ আপনার চমৎকার মতামতের জন্য ধন্যবাদ!' : '❤️ Thank you for your amazing feedback!');
-        }
-
-        updateUI();
-
-        // 7. AI Chatbot Interactive System Logic
-        function toggleChatWindow() {
-            playSound();
-            let box = document.getElementById('aiChatBox');
-            box.style.display = box.style.display === 'flex' ? 'none' : 'flex';
-        }
-
-        function handleChatKey(e) {
-            if (e.key === 'Enter') sendAiMessage();
-        }
-
-        function sendAiMessage() {
-            let inputField = document.getElementById('aiUserInput');
-            let text = inputField.value.trim();
-            if (!text) return;
-
-            playSound();
-            let msgContainer = document.getElementById('aiMessages');
-
-            // Append user message
-            let userDiv = document.createElement('div');
-            userDiv.className = 'ai-msg user';
-            userDiv.innerText = text;
-            msgContainer.appendChild(userDiv);
-            inputField.value = '';
-            msgContainer.scrollTop = msgContainer.scrollHeight;
-
-            // Generate AI response as Waziha Rahman
-            setTimeout(() => {
-                let botDiv = document.createElement('div');
-                botDiv.className = 'ai-msg bot';
-                
-                let lowerText = text.toLowerCase();
-                if (currentLang === 'bn') {
-                    if (lowerText.includes('কেমন') || lowerText.includes('how')) {
-                        botDiv.innerText = "আলহামদুলিল্লাহ, আমি অনেক ভালো আছি! বলুন, আপনাকে কীভাবে সাহায্য করতে পারি?";
-                    } else if (lowerText.includes('কে তৈরি') || lowerText.includes('creator') || lowerText.includes('pial')) {
-                        botDiv.innerText = "এই ওয়েবসাইটটি ডেভেলপার MD. Peyal অত্যন্ত যত্নের সাথে তৈরি করেছেন!";
-                    } else {
-                        botDiv.innerText = `হুম,আপনার কথাটি আমি বুঝতে পেরেছি ("${text}")। ওয়াজিহা রহমানের এই পোর্টাল সম্পর্কে আরও কিছু জানতে চাইলে আমাকে
-                     বলুন!`;
-                    }
-                } else {
-                    if (lowerText.includes('how are you') || lowerText.includes('hello')) {
-                        botDiv.innerText = "I am doing great, thank you! Tell us how I can assist you today.";
-                    } else if (lowerText.includes('created') || lowerText.includes('pial') || lowerText.includes('who')) {
-                        botDiv.innerText = "This website was created by MD. Peyal in Bangladesh!";
-                    } else {
-                        botDiv.innerText = `Thanks for sharing ("${text}"). Tell us if you need any more details about Waziha Rahman's official website!`;
-                    }
-                }
-
-                msgContainer.appendChild(botDiv);
-                msgContainer.scrollTop = msgContainer.scrollHeight;
-            }, 600);
-        }
-    </script>
-</body>
-</html>
-
+                            
