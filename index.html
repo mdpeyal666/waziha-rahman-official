@@ -153,3 +153,269 @@
 
 </body>
     </html>
+<!-- ===== WEBSITE INTEREST SURVEY ===== -->
+
+<section class="interest-survey">
+  <div class="survey-box">
+
+    <div class="survey-emoji">✨</div>
+
+    <h2>আপনি কি এই ওয়েবসাইটে<br>Interested?</h2>
+
+    <p>আপনার মতামত আমাদের জন্য গুরুত্বপূর্ণ ❤️</p>
+
+    <div class="survey-buttons">
+      <button onclick="vote('yes')" class="yes-button">
+        ❤️ হ্যাঁ, Interested
+      </button>
+
+      <button onclick="vote('no')" class="no-button">
+        👎 না, এখনো না
+      </button>
+    </div>
+
+    <div id="vote-message"></div>
+
+    <div class="results">
+      <div class="result-row">
+        <span>❤️ Interested</span>
+        <strong id="yes-percent">0%</strong>
+      </div>
+
+      <div class="progress">
+        <div id="yes-bar"></div>
+      </div>
+
+      <div class="result-row">
+        <span>👎 Not Interested</span>
+        <strong id="no-percent">0%</strong>
+      </div>
+
+      <div class="progress">
+        <div id="no-bar"></div>
+      </div>
+
+      <small id="total-votes">0 votes</small>
+    </div>
+
+  </div>
+</section>
+
+<style>
+.interest-survey {
+  width: 100%;
+  padding: 50px 15px;
+  box-sizing: border-box;
+}
+
+.survey-box {
+  max-width: 430px;
+  margin: auto;
+  padding: 32px 24px;
+  text-align: center;
+  border-radius: 28px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,.18),
+    rgba(255,255,255,.06)
+  );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,.25);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.18);
+
+  font-family: Arial, sans-serif;
+}
+
+.survey-emoji {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  font-size: 30px;
+
+  background: linear-gradient(135deg,#7c3aed,#ec4899);
+  box-shadow: 0 10px 25px rgba(124,58,237,.35);
+}
+
+.survey-box h2 {
+  margin: 0 0 10px;
+  font-size: 26px;
+  line-height: 1.3;
+}
+
+.survey-box > p {
+  opacity: .7;
+  margin-bottom: 25px;
+}
+
+.survey-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.survey-buttons button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: .25s;
+}
+
+.yes-button {
+  color: white;
+  background: linear-gradient(135deg,#7c3aed,#ec4899);
+}
+
+.no-button {
+  color: inherit;
+  background: rgba(128,128,128,.12);
+}
+
+.survey-buttons button:hover {
+  transform: translateY(-3px);
+}
+
+.survey-buttons button:active {
+  transform: scale(.97);
+}
+
+#vote-message {
+  margin-top: 18px;
+  font-weight: bold;
+  display: none;
+}
+
+.results {
+  margin-top: 25px;
+  text-align: left;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0 6px;
+  font-size: 14px;
+}
+
+.progress {
+  width: 100%;
+  height: 9px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(128,128,128,.18);
+}
+
+.progress div {
+  width: 0%;
+  height: 100%;
+  border-radius: 20px;
+
+  background: linear-gradient(90deg,#7c3aed,#ec4899);
+
+  transition: width .7s ease;
+}
+
+#total-votes {
+  display: block;
+  text-align: center;
+  margin-top: 18px;
+  opacity: .6;
+}
+
+/* Mobile */
+@media(max-width:480px) {
+  .survey-box {
+    padding: 28px 18px;
+  }
+
+  .survey-box h2 {
+    font-size: 23px;
+  }
+}
+</style>
+
+<script>
+function vote(answer) {
+
+  let yesVotes = Number(localStorage.getItem("yesVotes")) || 0;
+  let noVotes = Number(localStorage.getItem("noVotes")) || 0;
+
+  if (localStorage.getItem("alreadyVoted")) {
+    document.getElementById("vote-message").style.display = "block";
+    document.getElementById("vote-message").innerText =
+      "আপনি ইতিমধ্যে ভোট দিয়েছেন ❤️";
+    return;
+  }
+
+  if (answer === "yes") {
+    yesVotes++;
+  } else {
+    noVotes++;
+  }
+
+  localStorage.setItem("yesVotes", yesVotes);
+  localStorage.setItem("noVotes", noVotes);
+  localStorage.setItem("alreadyVoted", "true");
+
+  showResults();
+
+  document.getElementById("vote-message").style.display = "block";
+
+  if (answer === "yes") {
+    document.getElementById("vote-message").innerText =
+      "❤️ ধন্যবাদ! আপনার Interest আমাদের অনেক উৎসাহ দেবে!";
+  } else {
+    document.getElementById("vote-message").innerText =
+      "😊 আপনার মতামতের জন্য ধন্যবাদ!";
+  }
+}
+
+function showResults() {
+
+  let yesVotes = Number(localStorage.getItem("yesVotes")) || 0;
+  let noVotes = Number(localStorage.getItem("noVotes")) || 0;
+
+  let total = yesVotes + noVotes;
+
+  if (total === 0) return;
+
+  let yesPercent = Math.round((yesVotes / total) * 100);
+  let noPercent = 100 - yesPercent;
+
+  document.getElementById("yes-percent").innerText =
+    yesPercent + "%";
+
+  document.getElementById("no-percent").innerText =
+    noPercent + "%";
+
+  document.getElementById("yes-bar").style.width =
+    yesPercent + "%";
+
+  document.getElementById("no-bar").style.width =
+    noPercent + "%";
+
+  document.getElementById("total-votes").innerText =
+    total + (total === 1 ? " vote" : " votes");
+}
+
+showResults();
+</script>
+
+<!-- ===== FACEBOOK LINK এর আগে পর্যন্ত SURVEY ===== -->
