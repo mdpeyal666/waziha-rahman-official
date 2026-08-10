@@ -1,15 +1,16 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" data-theme="dark" id="htmlRoot">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Waziha Rahman | Ultimate Pro Masterpiece</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- PWA MANIFEST - Install App এর জন্য -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#38bdf8">
+
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --bg-color: #0b0f19;
@@ -21,7 +22,6 @@
             --text-muted: #94a3b8;
             --transition: all 0.35s ease;
         }
-
         [data-theme="light"] {
             --bg-color: #f1f5f9;
             --glass-bg: rgba(255, 255, 255, 0.85);
@@ -31,7 +31,6 @@
             --text-main: #0f172a;
             --text-muted: #64748b;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
@@ -42,184 +41,67 @@
             line-height: 1.6;
             transition: background-color 0.4s ease, color 0.4s ease;
         }
-
-        /* Navbar */
-        .navbar {
-            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            background: var(--glass-bg); backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid var(--glass-border);
-            padding: 14px 6%;
-        }
-        .nav-container {
-            max-width: 1200px; margin: 0 auto;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .logo {
-            font-size: 16px; font-weight: 800; letter-spacing: 0.5px;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .nav-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-        .nav-menu { display: flex; gap: 16px; list-style: none; }
-        .nav-menu a {
-            color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 600;
-            transition: var(--transition);
-        }
-        .nav-menu a:hover { color: var(--accent-cyan); }
-
-        .control-group { display: flex; gap: 6px; align-items: center; }
-        .btn-ctrl {
-            background: var(--glass-border); border: 1px solid var(--glass-border);
-            color: var(--text-main); padding: 5px 10px; border-radius: 20px;
-            cursor: pointer; font-size: 11px; font-weight: 700; transition: var(--transition);
-        }
-        .btn-ctrl:hover { background: var(--accent-cyan); color: #fff; transform: translateY(-1px); }
-        
-        .btn-install {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
-            color: #fff; border: none; padding: 5px 12px; border-radius: 20px;
-            cursor: pointer; font-size: 11px; font-weight: 700; transition: var(--transition);
-        }
-        .btn-install:hover { transform: scale(1.05); }
-
-        /* Hero Section with Cover Photo */
-        .hero {
-            position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center;
-            text-align: center; padding: 130px 20px 60px; overflow: hidden;
-        }
-        .hero-cover-bg {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: url('So lovely 😍') no-repeat center center/cover;
-            filter: blur(16px) brightness(0.35); transform: scale(1.1); z-index: -1;
-        }
-        .hero-content { max-width: 650px; position: relative; z-index: 1; }
-        
-        .profile-container {
-            width: 150px; height: 150px; margin: 0 auto 20px;
-            border-radius: 50%; padding: 4px;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-        .profile-pic {
-            width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
-            border: 3px solid var(--bg-color);
-        }
-        .creator-tag {
-            display: inline-block; padding: 6px 16px; background: var(--glass-border);
-            border-radius: 30px; font-size: 12px; font-weight: 600; color: var(--accent-cyan);
-            margin-bottom: 14px; border: 1px solid var(--glass-border);
-        }
-        .hero h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 10px; }
-        .hero h1 span {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .hero p { color: var(--text-muted); font-size: 14px; margin-bottom: 25px; }
-
-        .btn-main {
-            padding: 10px 24px; border-radius: 12px; font-size: 13px; font-weight: 700;
-            text-decoration: none; transition: var(--transition); cursor: pointer; border: none;
-            display: inline-block; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink)); color: #fff;
-        }
-        .btn-main:hover { transform: translateY(-2px); opacity: 0.95; }
-
-        /* Sections General */
-        .section { max-width: 1000px; margin: 0 auto; padding: 50px 20px; }
-        .glass-card {
-            background: var(--glass-bg); border: 1px solid var(--glass-border);
-            backdrop-filter: blur(16px); border-radius: 20px; padding: 35px 20px; text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .section-title { font-size: 20px; font-weight: 800; margin-bottom: 12px; }
-
-        /* Horizontal Carousel (ডানে-বামে স্ক্রল করার সিস্টেম) */
-        .gallery-container { position: relative; margin-top: 25px; }
-        .gallery-slider {
-            display: flex; gap: 20px; overflow-x: auto; scroll-behavior: smooth;
-            padding-bottom: 15px; scrollbar-width: none;
-        }
-        .gallery-slider::-webkit-scrollbar { display: none; }
-        
-        .media-box {
-            min-width: 300px; flex: 0 0 300px;
-            background: var(--glass-bg); border: 1px solid var(--glass-border);
-            border-radius: 16px; padding: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        .gallery-video, .gallery-image { 
-            width: 100%; border-radius: 10px; display: block; background: #000; height: 200px; object-fit: cover; 
-        }
-        
-        .slider-nav-btns {
-            display: flex; justify-content: center; gap: 15px; margin-top: 15px;
-        }
-        .slider-btn {
-            background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--text-main);
-            padding: 8px 16px; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 12px;
-            transition: var(--transition);
-        }
-        .slider-btn:hover { background: var(--accent-cyan); color: #fff; }
-
-        /* Voting System Section */
-        .voting-section {
-            max-width: 650px; margin: 20px auto 40px; padding: 25px 20px;
-            background: var(--glass-bg); border: 1px solid var(--glass-border);
-            backdrop-filter: blur(16px); border-radius: 20px; text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .vote-btn-group { display: flex; gap: 12px; justify-content: center; margin: 15px 0; }
-        .vote-btn {
-            padding: 8px 20px; border-radius: 10px; font-weight: 700; font-size: 12px;
-            cursor: pointer; border: none; transition: var(--transition);
-        }
-        .vote-btn.love { background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink)); color: #fff; }
-        .vote-btn.good { background: var(--glass-border); border: 1px solid var(--glass-border); color: var(--text-main); }
-        .vote-btn:hover { transform: scale(1.05); }
-
-        /* AI Chatbot Floating Widget */
-        .ai-chat-bubble {
-            position: fixed; bottom: 25px; right: 25px; z-index: 9999;
-            background: var(--glass-bg); border: 1px solid var(--glass-border);
-            backdrop-filter: blur(16px); padding: 8px 16px; border-radius: 30px;
-            display: flex; align-items: center; gap: 10px; cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: var(--transition);
-        }
-        .ai-chat-bubble:hover { transform: scale(1.05); border-color: var(--accent-cyan); }
-        .ai-bubble-avatar { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--accent-cyan); }
-        .ai-bubble-text { font-size: 13px; font-weight: 700; color: var(--text-main); }
-
-        .ai-chat-box {
-            position: fixed; bottom: 95px; right: 25px; width: 350px; height: 450px;
-            background: var(--glass-bg); backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border); border-radius: 20px;
-            z-index: 9999; display: none; flex-direction: column; overflow: hidden;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-        }
-        .ai-chat-header {
-            background: var(--glass-border); padding: 12px 16px;
-            display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 1px solid var(--glass-border);
-        }
-        .ai-header-left { display: flex; align-items: center; gap: 10px; }
-        .ai-header-avatar { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 1px solid var(--accent-cyan); }
-        .ai-chat-title { font-size: 13px; font-weight: 700; color: var(--text-main); }
-        .ai-close-btn { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 16px; }
-
-        .ai-chat-messages { flex: 1; padding: 14px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 12px; }
-        .ai-msg { padding: 9px 13px; border-radius: 12px; max-width: 82%; line-height: 1.5; }
-        .ai-msg.bot { background: var(--glass-border); align-self: flex-start; color: var(--text-main); }
-        .ai-msg.user { background: var(--accent-cyan); color: #fff; align-self: flex-end; font-weight: 700; }
-
-        .ai-chat-input-area { padding: 10px; display: flex; gap: 8px; border-top: 1px solid var(--glass-border); }
-        .ai-input { flex: 1; padding: 9px 12px; border-radius: 10px; border: 1px solid var(--glass-border); background: transparent; color: var(--text-main); font-size: 12px; outline: none; }
-        .ai-send-btn { padding: 9px 16px; border-radius: 10px; background: var(--accent-cyan); color: #fff; border: none; font-weight: 700; cursor: pointer; font-size: 12px; }
-
+     .navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--glass-border); padding: 14px 6%; }
+     .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+     .logo { font-size: 16px; font-weight: 800; letter-spacing: 0.5px; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+     .nav-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+     .nav-menu { display: flex; gap: 16px; list-style: none; }
+     .nav-menu a { color: var(--text-muted); text-decoration: none; font-size: 13px; font-weight: 600; transition: var(--transition); }
+     .nav-menu a:hover { color: var(--accent-cyan); }
+     .control-group { display: flex; gap: 6px; align-items: center; }
+     .btn-ctrl { background: var(--glass-border); border: 1px solid var(--glass-border); color: var(--text-main); padding: 5px 10px; border-radius: 20px; cursor: pointer; font-size: 11px; font-weight: 700; transition: var(--transition); }
+     .btn-ctrl:hover { background: var(--accent-cyan); color: #fff; transform: translateY(-1px); }
+     .btn-install { background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink)); color: #fff; border: none; padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 11px; font-weight: 700; transition: var(--transition); }
+     .btn-install:hover { transform: scale(1.05); }
+     .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 130px 20px 60px; overflow: hidden; }
+     .hero-cover-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('So lovely 😍') no-repeat center/cover; filter: blur(16px) brightness(0.35); transform: scale(1.1); z-index: -1; }
+     .hero-content { max-width: 650px; position: relative; z-index: 1; }
+     .profile-container { width: 150px; height: 150px; margin: 0 auto 20px; border-radius: 50%; padding: 4px; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink)); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+     .profile-pic { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 3px solid var(--bg-color); }
+     .creator-tag { display: inline-block; padding: 6px 16px; background: var(--glass-border); border-radius: 30px; font-size: 12px; font-weight: 600; color: var(--accent-cyan); margin-bottom: 14px; border: 1px solid var(--glass-border); }
+     .hero h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 10px; }
+     .hero h1 span { background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+     .hero p { color: var(--text-muted); font-size: 14px; margin-bottom: 25px; }
+     .btn-main { padding: 10px 24px; border-radius: 12px; font-size: 13px; font-weight: 700; text-decoration: none; transition: var(--transition); cursor: pointer; border: none; display: inline-block; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink)); color: #fff; }
+     .btn-main:hover { transform: translateY(-2px); opacity: 0.95; }
+     .section { max-width: 1000px; margin: 0 auto; padding: 50px 20px; }
+     .glass-card { background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(16px); border-radius: 20px; padding: 35px 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+     .section-title { font-size: 20px; font-weight: 800; margin-bottom: 12px; }
+     .gallery-container { position: relative; margin-top: 25px; }
+     .gallery-slider { display: flex; gap: 20px; overflow-x: auto; scroll-behavior: smooth; padding-bottom: 15px; scrollbar-width: none; }
+     .gallery-slider::-webkit-scrollbar { display: none; }
+     .media-box { min-width: 300px; flex: 0 0 300px; background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 16px; padding: 10px; box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+     .gallery-video,.gallery-image { width: 100%; border-radius: 10px; display: block; background: #000; height: 200px; object-fit: cover; }
+     .slider-nav-btns { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
+     .slider-btn { background: var(--glass-bg); border: 1px solid var(--glass-border); color: var(--text-main); padding: 8px 16px; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 12px; transition: var(--transition); }
+     .slider-btn:hover { background: var(--accent-cyan); color: #fff; }
+     .voting-section { max-width: 650px; margin: 20px auto 40px; padding: 25px 20px; background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(16px); border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+     .vote-btn-group { display: flex; gap: 12px; justify-content: center; margin: 15px 0; }
+     .vote-btn { padding: 8px 20px; border-radius: 10px; font-weight: 700; font-size: 12px; cursor: pointer; border: none; transition: var(--transition); }
+     .vote-btn.love { background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink)); color: #fff; }
+     .vote-btn.good { background: var(--glass-border); border: 1px solid var(--glass-border); color: var(--text-main); }
+     .vote-btn:hover { transform: scale(1.05); }
+     .ai-chat-bubble { position: fixed; bottom: 25px; right: 25px; z-index: 9999; background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: blur(16px); padding: 8px 16px; border-radius: 30px; display: flex; align-items: center; gap: 10px; cursor: pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: var(--transition); }
+     .ai-chat-bubble:hover { transform: scale(1.05); border-color: var(--accent-cyan); }
+     .ai-bubble-avatar { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 1.5px solid var(--accent-cyan); }
+     .ai-bubble-text { font-size: 13px; font-weight: 700; color: var(--text-main); }
+     .ai-chat-box { position: fixed; bottom: 95px; right: 25px; width: 350px; height: 450px; background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 20px; z-index: 9999; display: none; flex-direction: column; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.4); }
+     .ai-chat-header { background: var(--glass-border); padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--glass-border); }
+     .ai-header-left { display: flex; align-items: center; gap: 10px; }
+     .ai-header-avatar { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 1px solid var(--accent-cyan); }
+     .ai-chat-title { font-size: 13px; font-weight: 700; color: var(--text-main); }
+     .ai-close-btn { background: none; border: none; color: var(--text-muted); cursor: pointer; font-size: 16px; }
+     .ai-chat-messages { flex: 1; padding: 14px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 12px; }
+     .ai-msg { padding: 9px 13px; border-radius: 12px; max-width: 82%; line-height: 1.5; }
+     .ai-msg.bot { background: var(--glass-border); align-self: flex-start; color: var(--text-main); }
+     .ai-msg.user { background: var(--accent-cyan); color: #fff; align-self: flex-end; font-weight: 700; }
+     .ai-chat-input-area { padding: 10px; display: flex; gap: 8px; border-top: 1px solid var(--glass-border); }
+     .ai-input { flex: 1; padding: 9px 12px; border-radius: 10px; border: 1px solid var(--glass-border); background: transparent; color: var(--text-main); font-size: 12px; outline: none; }
+     .ai-send-btn { padding: 9px 16px; border-radius: 10px; background: var(--accent-cyan); color: #fff; border: none; font-weight: 700; cursor: pointer; font-size: 12px; }
         footer { text-align: center; padding: 30px; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--glass-border); }
     </style>
 </head>
 <body>
-
-    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">Waziha Rahman</div>
@@ -239,13 +121,11 @@
             </div>
         </div>
     </nav>
-
-    <!-- HERO SECTION -->
     <header class="hero" id="home">
         <div class="hero-cover-bg"></div>
         <div class="hero-content">
             <div class="profile-container">
-                <img src="Cute baby & mom 💞" class="profile-pic" alt="Waziha Rahman">
+                <img src="1000001529_2.jpg" class="profile-pic" alt="Waziha Rahman">
             </div>
             <span class="creator-tag">Created by Md Peyal in Bangladesh</span>
             <h1>Waziha <span>Rahman</span></h1>
@@ -255,8 +135,6 @@
             </div>
         </div>
     </header>
-
-    <!-- ABOUT SECTION -->
     <section class="section" id="about">
         <div class="glass-card">
             <h2 class="section-title" data-key="about_title">About Platform</h2>
@@ -264,27 +142,12 @@
             <div style="font-size: 12px; color: #22c55e; font-weight: 600;" id="visitor-count">Live Visitors (BD): Loading...</div>
         </div>
     </section>
-
-    <!-- VIDEO GALLERY SECTION -->
     <section class="section" id="video-gallery">
         <h2 class="section-title" style="text-align: center;" data-key="video_gallery_title">Featured Video Hub</h2>
         <div class="gallery-container">
             <div class="gallery-slider" id="videoSlider">
-                <div class="media-box">
-                    <video class="gallery-video" controls preload="metadata" playsinline>
-                        <source src="Facebook_1783604846656(360p).mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="media-box">
-                    <video class="gallery-video" controls preload="metadata" playsinline>
-                        <source src="Facebook_1783352252816(360p).mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="media-box">
-                    <video class="gallery-video" controls preload="metadata" playsinline>
-                        <source src="Facebook_1783604846656(360p).mp4" type="video/mp4">
-                    </video>
-                </div>
+                <div class="media-box"><video class="gallery-video" controls preload="metadata" playsinline><source src="Facebook_1783604846656(360p).mp4" type="video/mp4"></video></div>
+                <div class="media-box"><video class="gallery-video" controls preload="metadata" playsinline><source src="Facebook_1783352252816(360p).mp4" type="video/mp4"></video></div>
             </div>
             <div class="slider-nav-btns">
                 <button class="slider-btn" onclick="slideMedia('videoSlider', 'left')">◀ Prev / More</button>
@@ -292,21 +155,12 @@
             </div>
         </div>
     </section>
-
-    <!-- PHOTO GALLERY SECTION -->
     <section class="section" id="photo-gallery">
         <h2 class="section-title" style="text-align: center;" data-key="photo_gallery_title">Featured Photo Gallery</h2>
         <div class="gallery-container">
             <div class="gallery-slider" id="photoSlider">
-                <div class="media-box">
-                    <img src="1000001529_2.jpg" class="gallery-image" alt="Photo 1">
-                </div>
-                <div class="media-box">
-                    <img src="1000001529_2.jpg" class="gallery-image" alt="Photo 2">
-                </div>
-                <div class="media-box">
-                    <img src="1000001529_2.jpg" class="gallery-image" alt="Photo 3">
-                </div>
+                <div class="media-box"><img src="1000001529_2.jpg" class="gallery-image" alt="Photo 1"></div>
+                <div class="media-box"><img src="1000001529_2.jpg" class="gallery-image" alt="Photo 2"></div>
             </div>
             <div class="slider-nav-btns">
                 <button class="slider-btn" onclick="slideMedia('photoSlider', 'left')">◀ Prev / More</button>
@@ -314,8 +168,6 @@
             </div>
         </div>
     </section>
-
-    <!-- VOTING SYSTEM SECTION -->
     <section class="voting-section">
         <h3 class="section-title" data-key="vote_title" style="font-size: 16px;">Rate This Masterpiece</h3>
         <p style="color: var(--text-muted); font-size: 12px;" data-key="vote_desc">Give your honest feedback on this creation.</p>
@@ -334,30 +186,25 @@
             <div id="total-display" style="text-align: center; color: var(--accent-cyan); font-weight: 700;">🔥 Total Likes & Votes: 20,000</div>
         </div>
     </section>
-
-    <!-- CONTACT SECTION -->
     <section class="section" id="contact">
         <div class="glass-card">
             <h2 class="section-title" data-key="contact_title">Get In Touch</h2>
             <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 20px;" data-key="contact_desc">Connect directly through authenticated official portals in Bangladesh.</p>
             <div style="display: flex; justify-content: center; gap: 12px;">
-                <a href="https://www.facebook.com/profile.php?id=61588949437523" target="_blank" rel="noopener noreferrer" class="btn-main" style="background: #1877f2;">Facebook</a>
-                <a href="https://wa.me/8801782088426" target="_blank" rel="noopener noreferrer" class="btn-main" style="background: #25d366;">WhatsApp</a>
+                <a href="https://www.facebook.com/profile.php?id=61588949437523" target="_blank" class="btn-main" style="background: #1877f2;">Facebook</a>
+                <a href="https://wa.me/8801782088426" target="_blank" class="btn-main" style="background: #25d366;">WhatsApp</a>
             </div>
         </div>
     </section>
-
-    <!-- AI CHATBOT FLOATING WIDGET -->
     <div class="ai-chat-bubble" onclick="toggleChatWindow()">
         <img src="1000001529_2.jpg" class="ai-bubble-avatar" alt="Avatar">
         <span class="ai-bubble-text" id="bubbleTitle">Tell Us (ওয়াজিয়া রহমান)</span>
     </div>
-
     <div class="ai-chat-box" id="aiChatBox">
         <div class="ai-chat-header">
             <div class="ai-header-left">
                 <img src="1000001529_2.jpg" class="ai-header-avatar" alt="Avatar">
-                <span class="ai-chat-title" id="aiHeaderTitle">Tell Us (ওয়াজিয়া রহমান)</span>
+                <span class="ai-chat-title" id="aiHeaderTitle">Waziha Rahman AI ✨</span>
             </div>
             <button class="ai-close-btn" onclick="toggleChatWindow()">✕</button>
         </div>
@@ -369,13 +216,14 @@
             <button class="ai-send-btn" onclick="sendAiMessage()" id="chatSendBtn">Send</button>
         </div>
     </div>
-
     <footer>
         <p>&copy; 2026 Waziha Rahman. Created by Md Peyal in Bangladesh. All Rights Reserved.</p>
     </footer>
 
     <script>
-        // 1. Language Translation Dictionary (EN / BN)
-        const langData = {
-            en: {
-                            
+        const langData = {en: {nav_home: "Home", nav_about: "About", nav_videos: "Videos", nav_photos: "Photos", nav_contact: "Contact", btn_install: "📱 Install App", hero_desc: "The ultimate professional master creation engineered with absolute precision in Bangladesh.", btn_explore: "Explore Media", about_title: "About Platform", about_desc: "Welcome to the official enterprise-grade digital space of Waziha Rahman, hosted securely in Bangladesh.", video_gallery_title: "Featured Video Hub", photo_gallery_title: "Featured Photo Gallery", vote_title: "Rate This Masterpiece", vote_desc: "Give your honest feedback on this creation.", vote_yes: "❤️ Love It", vote_no: "👍 Good", vote_approval: "Approval Rating", contact_title: "Get In Touch", contact_desc: "Connect directly through authenticated official portals in Bangladesh."}, bn: {nav_home: "হোম", nav_about: "আমাদের সম্পর্কে", nav_videos: "ভিডিও", nav_photos: "ছবি", nav_contact: "যোগাযোগ", btn_install: "📱 অ্যাপ ইন্সটল", hero_desc: "বাংলাদেশে পরম নিখুঁততার সাথে প্রকৌশলীকৃত চূড়ান্ত পেশাদার মাস্টার সৃষ্টি।", btn_explore: "মিডিয়া দেখুন", about_title: "প্ল্যাটফর্ম সম্পর্কে", about_desc: "বাংলাদেশে নিরাপদে হোস্ট করা ওয়াজিহা রহমানের অফিসিয়াল এন্টারপ্রাইজ-গ্রেড ডিজিটাল স্পেসে স্বাগতম।", video_gallery_title: "বৈশিষ্ট্যযুক্ত ভিডিও হাব", photo_gallery_title: "বৈশিষ্ট্যযুক্ত ফটো গ্যালারি", vote_title: "এই মাস্টারপিস রেট করুন", vote_desc: "এই সৃষ্টি সম্পর্কে আপনার সৎ মতামত দিন।", vote_yes: "❤️ দারুণ", vote_no: "👍 ভালো", vote_approval: "অনুমোদন রেটিং", contact_title: "যোগাযোগ করুন", contact_desc: "বাংলাদেশের প্রমাণিত অফিসিয়াল পোর্টালের মাধ্যমে সরাসরি সংযোগ করুন।"}};
+        let currentLang = 'en'; let chatStarted = false;
+        function toggleTheme() { const html = document.getElementById('htmlRoot'); const btn = document.getElementById('themeToggle'); if (html.getAttribute('data-theme') === 'dark') { html.setAttribute('data-theme', 'light'); btn.textContent = '☀️'; } else { html.setAttribute('data-theme', 'dark'); btn.textContent = '🌙'; } }
+        function toggleLanguage() { currentLang = currentLang === 'en'? 'bn' : 'en'; applyLanguage(); }
+        function applyLanguage() { const btn = document.getElementById('langToggle'); btn.textContent = currentLang === 'en'? 'বাংলা' : 'English'; document.querySelectorAll('[data-key]').forEach(el => { const key = el.getAttribute('data-key'); if (langData[currentLang][key]) { el.textContent = langData[currentLang][key]; } }); }
+        function slideMedia(sliderId, direction) { const slider = document.getElementById(sliderId); const scrollAmount = 320; slider.scrollBy({
